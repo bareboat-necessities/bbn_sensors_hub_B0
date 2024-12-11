@@ -40,4 +40,9 @@ jobs:
         0xe000 "$HOME/.arduino15/packages/esp32/hardware/esp32/2.0.15/tools/partitions/boot_app0.bin" 
         0x10000 "$HOME/work/bbn_esp32_sensors_hub/bbn_esp32_sensors_hub/build/bbn_esp32_sensors_hub.ino.bin"
 
+    - name: Make zip
+      run: |
+        ls /home/runner/work/bbn_esp32_sensors_hub/bbn_esp32_sensors_hub/build/*.bin /home/runner/work/bbn_esp32_sensors_hub/bbn_esp32_sensors_hub/build/*.csv | zip bbn_esp32_sensors_hub_bin-$(date +%Y-%m-%d).zip -j -@
+        pwd
+        ls *.zip
         
