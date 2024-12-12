@@ -1,8 +1,7 @@
 #ifndef i2c_ads1115_h
 #define i2c_ads1115_h
 
-#include <M5_ADS1115.h>
-
+#include "m5_ads1115.h"
 #include "NmeaXDR.h"
 #include "Nmea0183Msg.h"
 
