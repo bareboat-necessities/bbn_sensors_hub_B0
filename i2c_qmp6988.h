@@ -16,7 +16,7 @@ bool i2c_qmp6988_found = false;
 
 void i2c_qmp6988_report() {
   if (i2c_qmp6988_sensor.updated()) {
-    gen_nmea0183_xdr("$BBXDR,C,%.2f,C,TEMP_QMP6988", i2c_qmp6988_sensor.temperature());    // C
+    gen_nmea0183_xdr("$BBXDR,C,%.2f,C,TEMP_QMP6988", i2c_qmp6988_sensor.celsius());        // C
     gen_nmea0183_xdr("$BBXDR,P,%.2f,P,PRES_QMP6988", i2c_qmp6988_sensor.pressure());       // Pa
   }
 }

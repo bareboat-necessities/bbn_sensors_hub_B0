@@ -16,7 +16,7 @@ bool i2c_sht30_found = false;
 void i2c_sht30_report() {
   if (i2c_sht30_sensor.updated()) {
     gen_nmea0183_xdr("$BBXDR,H,%.2f,P,HUMI_SHT3X", i2c_sht30_sensor.humidity());      // %
-    gen_nmea0183_xdr("$BBXDR,C,%.2f,C,TEMP_SHT3X", i2c_sht30_sensor.temperature());   // C
+    gen_nmea0183_xdr("$BBXDR,C,%.2f,C,TEMP_SHT3X", i2c_sht30_sensor.celsius());       // C
   }
 }
 
