@@ -1,9 +1,7 @@
 #ifndef i2c_qmp6988_h
 #define i2c_qmp6988_h
 
-#include <M5Unified.h>
-#include <M5UnitUnified.h>
-#include <M5UnitUnifiedENV.h>
+#include <M5UnitENV.h>
 
 #include "NmeaXDR.h"
 #include "Nmea0183Msg.h"
@@ -11,19 +9,19 @@
 #define QMP6988_SLAVE_ADDRESS_L (0x70)
 #define QMP6988_SLAVE_ADDRESS_H (0x56)
 
-m5::unit::UnitQMP6988 i2c_qmp6988_sensor(QMP6988_SLAVE_ADDRESS_L);
+QMP6988 i2c_qmp6988_sensor(QMP6988_SLAVE_ADDRESS_L);
 bool i2c_qmp6988_found = false;
 
 void i2c_qmp6988_report() {
-  if (i2c_qmp6988_sensor.updated()) {
-    gen_nmea0183_xdr("$BBXDR,C,%.2f,C,TEMP_QMP6988", i2c_qmp6988_sensor.celsius());        // C
-    gen_nmea0183_xdr("$BBXDR,P,%.2f,P,PRES_QMP6988", i2c_qmp6988_sensor.pressure());       // Pa
+  if (i2c_qmp6988_sensor.update()) {
+    gen_nmea0183_xdr("$BBXDR,C,%.2f,C,TEMP_QMP6988", i2c_qmp6988_sensor.cTemp);          // C
+    gen_nmea0183_xdr("$BBXDR,P,%.2f,P,PRES_QMP6988", i2c_qmp6988_sensor.pressure);       // Pa
   }
 }
 
 void i2c_qmp6988_try_init() {
   for (int i = 0; i < 3; i++) {
-    i2c_qmp6988_found = Units.add(i2c_qmp6988_sensor, Wire) && i2c_qmp6988_sensor.begin();
+    i2c_qmp6988_found = !i2c_qmp6988_sensor.begin(&Wire, QMP6988_SLAVE_ADDRESS_L, G2, G1, 400000U);
     if (i2c_qmp6988_found) {
       break;
     }
