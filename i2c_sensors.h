@@ -3,8 +3,11 @@
 
 #include "i2c_ads1115.h"
 
-void i2c_scan() {
+void i2c_sensors_scan() {
   i2c_ads1115_try_init();
+}
+
+void i2c_sensors_update() {
 }
 
 #endif

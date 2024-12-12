@@ -14,10 +14,11 @@ void setup() {
   AtomS3.begin(cfg);
   Wire.begin();
   Serial.begin(115200);
-  i2c_scan();
+  i2c_sensors_scan();
 }
 
 void loop() {
+  i2c_sensors_update();
   app.tick();
   delay(3);
 }
