@@ -44,6 +44,9 @@ void i2c_ads1115_try_init() {
     // | PGA_256  |        8             |
     resolution = i2c_ads1115_sensor.getCoefficient() / M5_UNIT_VMETER_PRESSURE_COEFFICIENT;
     calibration_factor = i2c_ads1115_sensor.getFactoryCalibration();
+    app.onRepeat(2000, []() {
+      i2c_ads1115_report();
+    });
   }
 }
 
