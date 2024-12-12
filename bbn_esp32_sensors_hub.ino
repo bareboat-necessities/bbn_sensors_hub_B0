@@ -1,5 +1,9 @@
 #include <M5AtomS3.h>
 #include <Wire.h>
+#include <ReactESP.h>  // https://github.com/mairas/ReactESP
+
+using namespace reactesp;
+ReactESP app;
 
 #include "NmeaXDR.h"
 #include "Nmea0183Msg.h"
@@ -14,5 +18,6 @@ void setup() {
 }
 
 void loop() {
+  app.tick();
   delay(3);
 }
