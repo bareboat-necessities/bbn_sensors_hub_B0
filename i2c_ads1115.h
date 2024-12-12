@@ -47,4 +47,13 @@ void i2c_ads1115_try_init() {
   }
 }
 
+void i2c_ads1115_report() {
+  int16_t adc_raw = i2c_ads1115_sensor.getSingleConversion();
+  float voltage   = adc_raw * resolution * calibration_factor;
+  //Serial.printf("Cal ADC:%.0f\n", adc_raw * calibration_factor);
+  //Serial.printf("Cal Voltage:%.2f mV\n", voltage);
+  //Serial.printf("Raw ADC:%d\n\n", adc_raw);
+  gen_nmea0183_xdr("$BBXDR,U,%.3f,V,VOLT", voltage / 1000);   // Volt
+}
+
 #endif
