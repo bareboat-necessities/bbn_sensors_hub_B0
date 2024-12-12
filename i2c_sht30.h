@@ -8,6 +8,8 @@
 #include "NmeaXDR.h"
 #include "Nmea0183Msg.h"
 
+#define SHT3X_I2C_ADDR 0x44
+
 m5::unit::UnitSHT30 i2c_sht30_sensor;
 bool i2c_sht30_found = false;
 
