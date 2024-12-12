@@ -18,6 +18,7 @@ void setup() {
 }
 
 void loop() {
+  AtomS3.update();
   i2c_sensors_update();
   app.tick();
   delay(3);
