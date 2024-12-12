@@ -10,7 +10,7 @@
 
 #define SHT3X_I2C_ADDR 0x44
 
-m5::unit::UnitSHT30 i2c_sht30_sensor;
+m5::unit::UnitSHT30 i2c_sht30_sensor(SHT3X_I2C_ADDR);
 bool i2c_sht30_found = false;
 
 void i2c_sht30_report() {

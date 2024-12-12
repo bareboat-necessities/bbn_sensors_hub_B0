@@ -11,7 +11,7 @@
 #define QMP6988_SLAVE_ADDRESS_L (0x70)
 #define QMP6988_SLAVE_ADDRESS_H (0x56)
 
-m5::unit::UnitQMP6988 i2c_qmp6988_sensor;
+m5::unit::UnitQMP6988 i2c_qmp6988_sensor(QMP6988_SLAVE_ADDRESS_L);
 bool i2c_qmp6988_found = false;
 
 void i2c_qmp6988_report() {
