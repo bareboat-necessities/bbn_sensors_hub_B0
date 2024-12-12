@@ -4,6 +4,8 @@
 #include <M5Unified.h>
 #include <M5UnitUnified.h>
 
+m5::unit::UnitUnified Units;
+
 #include "i2c_ads1115.h"
 #include "i2c_sht30.h"
 #include "i2c_qmp6988.h"

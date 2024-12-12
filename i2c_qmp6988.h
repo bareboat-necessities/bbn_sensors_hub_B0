@@ -8,7 +8,7 @@
 #include "NmeaXDR.h"
 #include "Nmea0183Msg.h"
 
-m5::unit::UnitSHT30 i2c_qmp6988_sensor;
+m5::unit::UnitQMP6988 i2c_qmp6988_sensor;
 bool i2c_qmp6988_found = false;
 
 void i2c_qmp6988_report() {
