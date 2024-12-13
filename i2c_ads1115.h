@@ -16,8 +16,8 @@
 #define M5_UNIT_VMETER_EEPROM_I2C_ADDR      0x53
 #define M5_UNIT_VMETER_PRESSURE_COEFFICIENT 0.015918958F
 
-ADS1115 i2c_ads1115_sensor;
-bool i2c_ads1115_found = false;
+extern ADS1115 i2c_ads1115_sensor;
+extern bool i2c_ads1115_found = false;
 
 float resolution         = 0.0;
 float calibration_factor = 0.0;
