@@ -9,7 +9,7 @@ NMEA 0183 XDR Sensors on esp32 m5stack atomS3-lite
 ## Loading Firmware
 
 ````
-if [ -f bbn-flash-m5-hub.sh ]; then rm bbn-flash-m5-hub.sh
+if [ -f bbn-flash-m5-hub.sh ]; then rm bbn-flash-m5-hub.sh; fi
 wget https://raw.githubusercontent.com/bareboat-necessities/my-bareboat/refs/heads/master/m5stack-tools/bbn-flash-m5-hub.sh
 chmod +x bbn-flash-m5-hub.sh 
 ./bbn-flash-m5-hub.sh -p /dev/ttyACM1
