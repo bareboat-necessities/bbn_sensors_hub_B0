@@ -16,4 +16,20 @@ void i2c_dht12_report() {
   }
 }
 
+void i2c_dht12_try_init() {
+  for (int i = 0; i < 3; i++) {
+    i2c_dht12_found = i2c_dht12_sensor.begin(&Wire, DHT12_I2C_ADDR, G2, G1, 400000U);
+    if (i2c_dht12_found) {
+      break;
+    }
+    delay(20);
+  }
+  if (i2c_dht12_found) {
+    gen_nmea0183_msg("$BBTXT,01,01,01,ENVIRONMENT found dht12 sensor at address=0x%s", String(DHT12_I2C_ADDR, HEX).c_str());
+    app.onRepeat(5000, []() {
+      i2c_dht12_report();
+    });
+  }
+}
+
 #endif
