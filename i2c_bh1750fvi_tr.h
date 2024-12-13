@@ -29,6 +29,13 @@ void i2c_bh1750fvi_tr_try_init() {
   }
   if (i2c_bh1750fvi_tr_found) {
     gen_nmea0183_msg("$BBTXT,01,01,01,ENVIRONMENT found bh1750fvi-tr sensor at address=0x%s", String(BH1750FVI_TR_I2C_ADDR, HEX).c_str());
+    // CONTINUOUSLY_H_RESOLUTION_MODE
+    // CONTINUOUSLY_H_RESOLUTION_MODE2
+    // CONTINUOUSLY_L_RESOLUTION_MODE
+    // ONE_TIME_H_RESOLUTION_MODE
+    // ONE_TIME_H_RESOLUTION_MODE2
+    // ONE_TIME_L_RESOLUTION_MODE
+    i2c_bh1750fvi_tr_sensor.setMode(CONTINUOUSLY_L_RESOLUTION_MODE);
     app.onRepeat(2000, []() {
       i2c_bh1750fvi_tr_report();
     });
