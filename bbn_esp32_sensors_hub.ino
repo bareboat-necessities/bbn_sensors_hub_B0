@@ -1,7 +1,4 @@
 #include <M5AtomS3.h>
-#include <Arduino.h>
-#include <M5Unified.h>
-#include <I2C_Class.h>
 #include <Wire.h>
 #include <ReactESP.h>  // https://github.com/mairas/ReactESP
 
