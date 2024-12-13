@@ -35,11 +35,11 @@ void i2c_bme680_try_init() {
   if (i2c_bme680_found) {
     gen_nmea0183_msg("$BBTXT,01,01,01,ENVIRONMENT found bme680 sensor at address=0x%s", String(BME680_I2C_ADDRESS, HEX).c_str());
     // Set up oversampling and filter initialization
-    bme680.setTemperatureOversampling(BME680_OS_8X);
-    bme680.setHumidityOversampling(BME680_OS_2X);
-    bme680.setPressureOversampling(BME680_OS_4X);
-    bme680.setIIRFilterSize(BME680_FILTER_SIZE_3);
-    bme680.setGasHeater(320, 150); // 320*C for 150 ms
+    i2c_bme680_sensor.setTemperatureOversampling(BME680_OS_8X);
+    i2c_bme680_sensor.setHumidityOversampling(BME680_OS_2X);
+    i2c_bme680_sensor.setPressureOversampling(BME680_OS_4X);
+    i2c_bme680_sensor.setIIRFilterSize(BME680_FILTER_SIZE_3);
+    i2c_bme680_sensor.setGasHeater(320, 150); // 320*C for 150 ms
     app.onRepeat(5000, []() {
       i2c_bme680_report();
     });
