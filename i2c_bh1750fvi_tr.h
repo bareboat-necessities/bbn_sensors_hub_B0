@@ -2,7 +2,7 @@
 #define i2c_bh1750fvi_tr_h
 
 #include <Wire.h>
-#include <M5_DLight.h>
+#include <M5_DLight.h>   // https://github.com/m5stack/M5-DLight/
 
 #include "NmeaXDR.h"
 #include "Nmea0183Msg.h"
