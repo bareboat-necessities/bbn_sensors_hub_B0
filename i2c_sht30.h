@@ -20,7 +20,7 @@ void i2c_sht30_report() {
 
 void i2c_sht30_try_init() {
   for (int i = 0; i < 3; i++) {
-    i2c_sht30_found = i2c_sht30_sensor.begin(&Wire, SHT3X_I2C_ADDR, G2, G1, 400000U);
+    i2c_sht30_found = i2c_sht30_sensor.begin(&Wire, SHT3X_I2C_ADDR, G2, G1, 100000U);
     if (i2c_sht30_found) {
       break;
     }

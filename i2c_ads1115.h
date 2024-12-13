@@ -33,7 +33,7 @@ void i2c_ads1115_report() {
 
 void i2c_ads1115_try_init() {
   for (int i = 0; i < 3; i++) {
-    i2c_ads1115_found = i2c_ads1115_sensor.begin(&Wire, M5_UNIT_VMETER_I2C_ADDR, G2, G1, 400000U);
+    i2c_ads1115_found = i2c_ads1115_sensor.begin(&Wire, M5_UNIT_VMETER_I2C_ADDR, G2, G1, 100000U);
     if (i2c_ads1115_found) {
       break;
     }

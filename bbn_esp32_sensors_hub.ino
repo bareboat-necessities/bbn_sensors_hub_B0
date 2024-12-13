@@ -12,7 +12,7 @@ ReactESP app;
 void setup() {
   auto cfg = M5.config();
   AtomS3.begin(cfg);
-  Wire.begin(G2, G1, 400000U);
+  Wire.begin(G2, G1, 100000U);
   Serial.begin(115200);
   i2c_sensors_scan();
 }

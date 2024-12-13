@@ -21,7 +21,7 @@ void i2c_qmp6988_report() {
 
 void i2c_qmp6988_try_init() {
   for (int i = 0; i < 3; i++) {
-    i2c_qmp6988_found = i2c_qmp6988_sensor.begin(&Wire, QMP6988_SLAVE_ADDRESS_L, G2, G1, 400000U);
+    i2c_qmp6988_found = i2c_qmp6988_sensor.begin(&Wire, QMP6988_SLAVE_ADDRESS_L, G2, G1, 100000U);
     if (i2c_qmp6988_found) {
       break;
     }
