@@ -13,6 +13,7 @@ void i2c_sensors_scan() {
   i2c_dht12_try_init();
   i2c_bmp280_try_init();
   i2c_qmp6988_try_init();
+  i2c_bme680_try_init();
 }
 
 void i2c_sensors_update() {
