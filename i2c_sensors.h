@@ -8,6 +8,7 @@
 #include "i2c_dht12.h"
 #include "i2c_ads1115.h"
 #include "i2c_bh1750fvi_tr.h"
+#include "i2c_ain_4_20ma.h"
 
 void i2c_sensors_scan() {
   i2c_ads1115_try_init();
@@ -17,6 +18,7 @@ void i2c_sensors_scan() {
   i2c_qmp6988_try_init();
   i2c_bme680_try_init();
   i2c_bh1750fvi_tr_try_init();
+  i2c_ain_4_20ma_try_init();
 }
 
 void i2c_sensors_update() {
