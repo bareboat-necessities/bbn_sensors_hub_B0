@@ -16,11 +16,11 @@ Adafruit_BME680 i2c_bme680_sensor(&Wire); // I2C
 bool i2c_bme680_found = false;
 
 void i2c_bme680_report() {
-  if (bme680.performReading()) {
-    gen_nmea0183_xdr("$BBXDR,C,%.2f,C,TEMP_BME680", bme680.temperature);             // C
-    gen_nmea0183_xdr("$BBXDR,P,%.2f,P,PRES_BME680", bme680.pressure);                // Pa
-    gen_nmea0183_xdr("$BBXDR,H,%.2f,P,HUMI_BME680", bme680.humidity);                // %
-    gen_nmea0183_xdr("$BBXDR,H,%.2f,,GASR_BME680", bme680.gas_resistance / 1000.0);  // KOhms
+  if (i2c_bme680_sensor.performReading()) {
+    gen_nmea0183_xdr("$BBXDR,C,%.2f,C,TEMP_BME680", i2c_bme680_sensor.temperature);             // C
+    gen_nmea0183_xdr("$BBXDR,P,%.2f,P,PRES_BME680", i2c_bme680_sensor.pressure);                // Pa
+    gen_nmea0183_xdr("$BBXDR,H,%.2f,P,HUMI_BME680", i2c_bme680_sensor.humidity);                // %
+    gen_nmea0183_xdr("$BBXDR,H,%.2f,,GASR_BME680", i2c_bme680_sensor.gas_resistance / 1000.0);  // KOhms
   }
 }
 
