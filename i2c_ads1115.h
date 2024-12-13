@@ -37,7 +37,7 @@ void i2c_ads1115_try_init() {
     if (i2c_ads1115_found) {
       break;
     }
-    delay(20);
+    delay(10);
   }
   if (i2c_ads1115_found) {
     gen_nmea0183_msg("$BBTXT,01,01,01,VOLTAGE found ads1115 sensor at address=0x%s", String(M5_UNIT_VMETER_I2C_ADDR, HEX).c_str());

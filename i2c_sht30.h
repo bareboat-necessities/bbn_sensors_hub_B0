@@ -24,7 +24,7 @@ void i2c_sht30_try_init() {
     if (i2c_sht30_found) {
       break;
     }
-    delay(20);
+    delay(10);
   }
   if (i2c_sht30_found) {
     gen_nmea0183_msg("$BBTXT,01,01,01,ENVIRONMENT found sht30 sensor at address=0x%s", String(SHT3X_I2C_ADDR, HEX).c_str());

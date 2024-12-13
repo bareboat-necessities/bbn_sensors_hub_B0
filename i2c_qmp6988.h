@@ -25,7 +25,7 @@ void i2c_qmp6988_try_init() {
     if (i2c_qmp6988_found) {
       break;
     }
-    delay(20);
+    delay(10);
   }
   if (i2c_qmp6988_found) {
     gen_nmea0183_msg("$BBTXT,01,01,01,ENVIRONMENT found qmp6988 sensor at address=0x%s", String(QMP6988_SLAVE_ADDRESS_L, HEX).c_str());

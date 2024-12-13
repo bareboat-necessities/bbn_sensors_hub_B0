@@ -22,7 +22,7 @@ void i2c_bmp280_try_init() {
     if (i2c_bmp280_found) {
       break;
     }
-    delay(20);
+    delay(10);
   }
   if (i2c_bmp280_found) {
     gen_nmea0183_msg("$BBTXT,01,01,01,ENVIRONMENT found bmp280 sensor at address=0x%s", String(BMP280_I2C_ADDR, HEX).c_str());

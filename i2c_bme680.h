@@ -30,7 +30,7 @@ void i2c_bme680_try_init() {
     if (i2c_bme680_found) {
       break;
     }
-    delay(20);
+    delay(10);
   }
   if (i2c_bme680_found) {
     gen_nmea0183_msg("$BBTXT,01,01,01,ENVIRONMENT found bme680 sensor at address=0x%s", String(BME680_I2C_ADDRESS, HEX).c_str());
