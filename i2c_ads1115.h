@@ -45,7 +45,8 @@ bool i2c_ads1115_try_init(TwoWire *wire = &Wire, uint8_t sda = SDA, uint8_t scl 
     delay(10);
   }
   if (i2c_ads1115_found) {
-    gen_nmea0183_msg("$BBTXT,01,01,01,VOLTAGE found ads1115 sensor at address=0x%s", String(M5_UNIT_VMETER_I2C_ADDR, HEX).c_str());
+    gen_nmea0183_msg("$BBTXT,01,01,01,VOLTAGE found ads1115 sensor at address=0x%s",
+      (String(M5_UNIT_VMETER_I2C_ADDR, HEX) + String((wire == &Wire ? " main bus" : " alt bus"))).c_str());
     i2c_ads1115_sensor->setEEPROMAddr(M5_UNIT_VMETER_EEPROM_I2C_ADDR);
     i2c_ads1115_sensor->setMode(ADS1115_MODE_SINGLESHOT);
     i2c_ads1115_sensor->setRate(ADS1115_RATE_8);
