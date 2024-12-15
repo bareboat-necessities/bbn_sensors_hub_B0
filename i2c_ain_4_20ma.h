@@ -8,13 +8,13 @@
 #include "NmeaChecksum.h"
 
 MODULE_4_20MA i2c_ain_4_20ma_sensor;
-bool i2c_ain_4_20ma_found = false;
 
 void i2c_ain_4_20ma_report() {
   gen_nmea0183_xdr("$BBXDR,I,%.5f,A,AMPS", (float)(i2c_ain_4_20ma_sensor.getCurrentValue(0)) / 100.0 / 1000.0);  // Amp
 }
 
-void i2c_ain_4_20ma_try_init() {
+bool i2c_ain_4_20ma_try_init() {
+  bool i2c_ain_4_20ma_found = false;
   for (int i = 0; i < 3; i++) {
     i2c_ain_4_20ma_found = i2c_ain_4_20ma_sensor.begin(&Wire, MODULE_4_20MA_ADDR, G2, G1, 100000UL);
     if (i2c_ain_4_20ma_found) {
@@ -28,6 +28,7 @@ void i2c_ain_4_20ma_try_init() {
       i2c_ain_4_20ma_report();
     });
   }
+  return i2c_ain_4_20ma_found;
 }
 
 #endif

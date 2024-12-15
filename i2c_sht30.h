@@ -9,7 +9,6 @@
 #define SHT3X_I2C_ADDR 0x44
 
 SHT3X i2c_sht30_sensor;
-bool i2c_sht30_found = false;
 
 void i2c_sht30_report() {
   if (i2c_sht30_sensor.update()) {
@@ -18,7 +17,8 @@ void i2c_sht30_report() {
   }
 }
 
-void i2c_sht30_try_init() {
+bool i2c_sht30_try_init() {
+  bool i2c_sht30_found = false;
   for (int i = 0; i < 3; i++) {
     i2c_sht30_found = i2c_sht30_sensor.begin(&Wire, SHT3X_I2C_ADDR, G2, G1, 100000U);
     if (i2c_sht30_found) {
@@ -32,6 +32,7 @@ void i2c_sht30_try_init() {
       i2c_sht30_report();
     });
   }
+  return i2c_sht30_found;
 }
 
 #endif

@@ -7,7 +7,6 @@
 #include "Nmea0183Msg.h"
 
 BMP280 i2c_bmp280_sensor;
-bool i2c_bmp280_found = false;
 
 void i2c_bmp280_report() {
   if (i2c_bmp280_sensor.update()) {
@@ -16,7 +15,8 @@ void i2c_bmp280_report() {
   }
 }
 
-void i2c_bmp280_try_init() {
+bool i2c_bmp280_try_init() {
+  bool i2c_bmp280_found = false;
   for (int i = 0; i < 3; i++) {
     i2c_bmp280_found = i2c_bmp280_sensor.begin(&Wire, BMP280_I2C_ADDR, G2, G1, 100000U);
     if (i2c_bmp280_found) {
@@ -36,6 +36,7 @@ void i2c_bmp280_try_init() {
       i2c_bmp280_report();
     });
   }
+  return i2c_bmp280_found;
 }
 
 #endif

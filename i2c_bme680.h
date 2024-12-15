@@ -13,7 +13,6 @@
 #define SEALEVELPRESSURE_HPA (1013.25)
 
 Adafruit_BME680 i2c_bme680_sensor(&Wire); // I2C
-bool i2c_bme680_found = false;
 
 void i2c_bme680_report() {
   if (i2c_bme680_sensor.performReading()) {
@@ -24,7 +23,8 @@ void i2c_bme680_report() {
   }
 }
 
-void i2c_bme680_try_init() {
+bool i2c_bme680_try_init() {
+  bool i2c_bme680_found = false;
   for (int i = 0; i < 3; i++) {
     i2c_bme680_found = i2c_bme680_sensor.begin(BME680_I2C_ADDRESS);
     if (i2c_bme680_found) {
@@ -44,6 +44,7 @@ void i2c_bme680_try_init() {
       i2c_bme680_report();
     });
   }
+  return i2c_bme680_found;
 }
 
 #endif

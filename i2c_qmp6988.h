@@ -10,7 +10,6 @@
 #define QMP6988_SLAVE_ADDRESS_H (0x56)
 
 QMP6988 i2c_qmp6988_sensor;
-bool i2c_qmp6988_found = false;
 
 void i2c_qmp6988_report() {
   if (i2c_qmp6988_sensor.update()) {
@@ -19,7 +18,8 @@ void i2c_qmp6988_report() {
   }
 }
 
-void i2c_qmp6988_try_init() {
+bool i2c_qmp6988_try_init() {
+  bool i2c_qmp6988_found = false;
   for (int i = 0; i < 3; i++) {
     i2c_qmp6988_found = i2c_qmp6988_sensor.begin(&Wire, QMP6988_SLAVE_ADDRESS_L, G2, G1, 100000U);
     if (i2c_qmp6988_found) {
@@ -33,6 +33,7 @@ void i2c_qmp6988_try_init() {
       i2c_qmp6988_report();
     });
   }
+  return i2c_qmp6988_found;
 }
 
 #endif

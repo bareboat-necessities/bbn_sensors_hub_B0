@@ -10,14 +10,14 @@
 #define BH1750FVI_TR_I2C_ADDR 0x23
 
 M5_DLight i2c_bh1750fvi_tr_sensor(BH1750FVI_TR_I2C_ADDR);
-bool i2c_bh1750fvi_tr_found = false;
 
 void i2c_bh1750fvi_tr_report() {
   uint16_t lux = i2c_bh1750fvi_tr_sensor.getLUX();
   gen_nmea0183_xdr("$BBXDR,X,%.1f,L,ILLU", (float)lux);
 }
 
-void i2c_bh1750fvi_tr_try_init() {
+bool i2c_bh1750fvi_tr_try_init() {
+  bool i2c_bh1750fvi_tr_found = false;
   for (int i = 0; i < 3; i++) {
     Wire.beginTransmission(BH1750FVI_TR_I2C_ADDR);
     i2c_bh1750fvi_tr_found = !Wire.endTransmission();
@@ -40,6 +40,7 @@ void i2c_bh1750fvi_tr_try_init() {
       i2c_bh1750fvi_tr_report();
     });
   }
+  return i2c_bh1750fvi_tr_found;
 }
 
 #endif
