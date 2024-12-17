@@ -71,6 +71,35 @@ $BBXDR,I,0.000,A,AMPS_INA219_2*29
 $BBXDR,W,0.000,W,WATT_INA219_2*38
 ````
 
+###  SGP30 Air Quality and TVOC sensor connected to M5Stack AtomS3-Lite via i2c
+
+Generates NMEA-0183 XDR sentences (USB Serial) like this:
+
+````
+$BBXDR,X,5,,TVOC*2D
+$BBXDR,X,415,,eCO2*7D
+$BBXDR,X,13507,,rawH2*38
+$BBXDR,X,18875,,rawEthanol*14
+$BBXDR,X,7,,TVOC*2F
+$BBXDR,X,416,,eCO2*7E
+$BBXDR,X,13501,,rawH2*3E
+$BBXDR,X,18864,,rawEthanol*14
+````
+
+Here are some TVOC levels and their associated health effects:
+
+- 0 ppb: Good
+- 220 ppb: Moderate, may cause some symptoms
+- 660 ppb: Unhealthy if sensitive, more likely to cause symptoms
+- 2200 ppb: Unhealthy
+- 3300 ppb: Very unhealthy
+- 4400 ppb: Hazardous
+
+SGP30 Air Quality and TVOC sensor :
+
+[M5Stack SGP30 Air Quality and TVOC sensor](https://shop.m5stack.com/products/tvoc-eco2-gas-unit-sgp30)
+
+
 ## NMEA XDR Output
 
 on USB-C port with baud rate 115200
