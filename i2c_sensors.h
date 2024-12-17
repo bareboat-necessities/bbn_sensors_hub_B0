@@ -11,12 +11,14 @@
 #include "i2c_ain_4_20ma.h"
 #include "i2c_sgp30.h"
 #include "i2c_vl53l0x.h"
+#include "i2c_ina219.h"
 
 void i2c_sensors_scan(bool i2c_alt_enable_scan) {
   i2c_ads1115_try_init(&Wire, G2, G1, 100000UL);
   if (i2c_alt_enable_scan) {
     i2c_ads1115_try_init(&Wire1, G38, G39, 100000UL);
   }
+  i2c_ina219_try_init();
   i2c_bmp280_try_init();
   i2c_qmp6988_try_init();
   i2c_bme680_try_init();

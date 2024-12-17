@@ -58,4 +58,11 @@ void gen_nmea0183_xdr(const char *nmea_fmt, float value) {
   Serial.printf("%s*%02X\r\n", nmea_part, checksum);
 }
 
+void gen_nmea0183_xdr_2(const char *nmea_fmt, float value, int index) {
+  char nmea_part[82];
+  snprintf(nmea_part, 76, nmea_fmt, value, index);
+  int checksum = nmea0183_checksum(nmea_part);
+  Serial.printf("%s*%02X\r\n", nmea_part, checksum);
+}
+
 #endif
