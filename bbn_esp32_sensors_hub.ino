@@ -19,6 +19,7 @@ void setup() {
     Wire1.begin(G38, G39, 100000UL);
   }
   Serial.begin(115200);
+  one_wire_sensors_scan();
   i2c_sensors_scan(i2c_alt_enable);
 }
 
