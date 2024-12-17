@@ -12,7 +12,7 @@
 #include "i2c_sgp30.h"
 #include "i2c_vl53l0x.h"
 #include "i2c_ina219.h"
-//#include "i2c_m5_encoder.h"
+//#include "i2c_m5_encoder.h" // conflicts with ina219 on 0x40
 
 void i2c_sensors_scan(bool i2c_alt_enable_scan) {
   i2c_ads1115_try_init(&Wire, G2, G1, 100000UL);
