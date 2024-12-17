@@ -37,8 +37,10 @@ void i2c_m5_encoder_report() {
 bool i2c_m5_encoder_try_init() {
   bool i2c_m5_encoder_found = false;
   for (int i = 0; i < 3; i++) {
-    i2c_m5_encoder_found = i2c_m5_encoder_sensor.begin(&Wire, ENCODER_I2C_ADDR, G2, G1, 100000U);
+    Wire.beginTransmission(ENCODER_I2C_ADDR);
+    i2c_m5_encoder_found = !Wire.endTransmission();
     if (i2c_m5_encoder_found) {
+      i2c_m5_encoder_sensor.begin(&Wire, ENCODER_I2C_ADDR, G2, G1, 100000U);
       break;
     }
     delay(4);
