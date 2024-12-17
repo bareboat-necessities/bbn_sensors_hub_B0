@@ -1,5 +1,5 @@
-#ifndef 1w_sensors_h
-#define 1w_sensors_h
+#ifndef w1_sensors_h
+#define w1_sensors_h
 
 #include <OneWire.h>
 #include <DallasTemperature.h>
