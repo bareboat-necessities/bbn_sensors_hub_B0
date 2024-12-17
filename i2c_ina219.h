@@ -58,7 +58,7 @@ bool i2c_ina219_begin(Adafruit_INA219 *ina219, TwoWire *wire) {
       Wire.beginTransmission(INA219_I2C_ADDRESS_0);
       Wire.write(whoami_reg);
       if (Wire.endTransmission(false) == 0) {
-        Wire.requestFrom(addr, 1);
+        Wire.requestFrom(INA219_I2C_ADDRESS_0, 1);
         whoami_match = Wire.read() == whoami_id;
       }
     }
