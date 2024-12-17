@@ -27,17 +27,22 @@ void i2c_ina219_report(Adafruit_INA219 *ina219, int bus, int index) {
   // Read voltage and current from INA219.
   float shuntvoltage = ina219->getShuntVoltage_mV();
   float busvoltage = ina219->getBusVoltage_V();
-  float current_mA = ina219->getCurrent_mA();
 
-  // Compute load voltage, power, and milliamp-hours.
+  // Compute load voltage
   float loadvoltage = busvoltage + (shuntvoltage / 1000);
-  float power_mW = loadvoltage * current_mA;
-
   gen_nmea0183_xdr_3("$BBXDR,U,%.3f,V,VOLT_INA219_%d_%d", loadvoltage, bus, index);
-  gen_nmea0183_xdr_3("$BBXDR,I,%.3f,A,AMPS_INA219_%d_%d", current_mA / 1000, bus, index);
-  gen_nmea0183_xdr_3("$BBXDR,W,%.3f,W,WATT_INA219_%d_%d", power_mW / 1000, bus, index);
-  if (fabs(current_mA) > 0.001) {
-    gen_nmea0183_xdr_3("$BBXDR,O,%.3f,O,OHMS_INA219_%d_%d", fabs(loadvoltage * 1000 / current_mA), bus, index);
+
+  float current_mA = ina219->getCurrent_mA();
+  if (!isnan(current_mA)) {
+    gen_nmea0183_xdr_3("$BBXDR,I,%.3f,A,AMPS_INA219_%d_%d", current_mA / 1000, bus, index);
+    // Compute power
+    float power_mW = loadvoltage * current_mA;
+    gen_nmea0183_xdr_3("$BBXDR,W,%.3f,W,WATT_INA219_%d_%d", power_mW / 1000, bus, index);
+    if (fabs(current_mA) > 0.001) {
+      // Compute resistance
+      float resistance = fabs(loadvoltage * 1000 / current_mA);
+      gen_nmea0183_xdr_3("$BBXDR,O,%.3f,O,OHMS_INA219_%d_%d", resistance, bus, index);
+    }
   }
 }
 
