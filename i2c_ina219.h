@@ -32,7 +32,7 @@ void i2c_ina219_report(Adafruit_INA219 *ina219, int index) {
   gen_nmea0183_xdr_2("$BBXDR,I,%.3f,A,AMPS_INA219_%d", current_mA / 1000, index);
   gen_nmea0183_xdr_2("$BBXDR,W,%.3f,W,WATT_INA219_%d", power_mW / 1000, index);
   if (fabs(current_mA) > 0.001) {
-    gen_nmea0183_xdr_2("$BBXDR,O,%.3f,W,OHMS_INA219_%d", fabs(loadvoltage * 1000 / current_mA), index);
+    gen_nmea0183_xdr_2("$BBXDR,O,%.3f,O,OHMS_INA219_%d", fabs(loadvoltage * 1000 / current_mA), index);
   }
 }
 
