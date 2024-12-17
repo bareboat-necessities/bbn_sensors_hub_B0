@@ -53,13 +53,11 @@ bool i2c_ina219_begin(Adafruit_INA219 *ina219, TwoWire *wire) {
     // checkn config register to avoid mistaking for M5Stack Encoder Unit
     bool whoami_match = false;
     const uint8_t whoami_reg = 0x0;
-    if (whoami_reg != 0x0) {
-      Wire.beginTransmission(INA219_I2C_ADDRESS_0);
-      Wire.write(whoami_reg);
-      if (Wire.endTransmission(false) == 0) {
-        Wire.requestFrom(INA219_I2C_ADDRESS_0, 1);
-        whoami_match = Wire.read() != 0x0;
-      }
+    Wire.beginTransmission(INA219_I2C_ADDRESS_0);
+    Wire.write(whoami_reg);
+    if (Wire.endTransmission(false) == 0) {
+      Wire.requestFrom(INA219_I2C_ADDRESS_0, 1);
+      whoami_match = Wire.read() != 0x0;
     }
     if (!whoami_match) {
       return false;
