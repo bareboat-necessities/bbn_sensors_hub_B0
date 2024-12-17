@@ -50,7 +50,7 @@ void i2c_ina219_report(Adafruit_INA219 *ina219, int bus, int index) {
 
 bool i2c_ina219_begin(Adafruit_INA219 *ina219, TwoWire *wire) {
   if (wire != &Wire1 && ina219 == &ina219_0) {
-    // check whoami register
+    // check whoami register to avoid mistaking for M5Stack Encoder Unit
     bool whoami_match = false;
     const uint8_t whoami_reg = 0x0;
     const uint8_t whoami_id = 0x39;
