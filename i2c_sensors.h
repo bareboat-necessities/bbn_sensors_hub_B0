@@ -12,6 +12,7 @@
 #include "i2c_sgp30.h"
 #include "i2c_vl53l0x.h"
 #include "i2c_ina219.h"
+#include "i2c_as3935.h"
 
 void i2c_sensors_scan(bool i2c_alt_enable_scan) {
   i2c_ads1115_try_init(&Wire, G2, G1, 100000UL);
@@ -29,6 +30,7 @@ void i2c_sensors_scan(bool i2c_alt_enable_scan) {
   i2c_sgp30_try_init();
   i2c_bh1750fvi_tr_try_init();
   i2c_vl53l0x_try_init();
+  i2c_as3935_try_init();
 }
 
 void i2c_sensors_update() {
