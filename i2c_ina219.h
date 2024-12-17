@@ -41,7 +41,7 @@ void i2c_ina219_report(Adafruit_INA219 *ina219, int bus, int index) {
     if (fabs(current_mA) > 0.5) {
       // Compute resistance
       float resistance = fabs(loadvoltage * 1000 / current_mA);
-      gen_nmea0183_xdr_3("$BBXDR,G,%.1f,O,OHMS_INA219_%d_%d", resistance, bus, index);
+      gen_nmea0183_xdr_3("$BBXDR,G,%.3f,O,OHMS_INA219_%d_%d", resistance, bus, index);
     }
   }
 }
