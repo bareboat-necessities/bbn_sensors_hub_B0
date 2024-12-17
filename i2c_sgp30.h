@@ -33,7 +33,7 @@ void i2c_sgp30_report() {
   if (sgp_counter == 6) {
     sgp_counter = 0;
     uint16_t TVOC_base, eCO2_base;
-    i2c_sgp30_sensor.getIAQBaseline(&eCO2_base, &TVOC_base)
+    i2c_sgp30_sensor.getIAQBaseline(&eCO2_base, &TVOC_base);
   }
 }
 
