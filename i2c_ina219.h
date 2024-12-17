@@ -49,6 +49,24 @@ void i2c_ina219_report(Adafruit_INA219 *ina219, int bus, int index) {
 }
 
 bool i2c_ina219_begin(Adafruit_INA219 *ina219, TwoWire *wire) {
+  if (wire != &Wire1 && ina219 == &ina219_0) {
+    // check whoami register
+    bool whoami_match = false;
+    const uint8_t whoami_reg = 0x0;
+    const uint8_t whoami_id = 0x39;
+    if (whoami_reg != 0x0 || whoami_id != 0x0) {
+      Wire.beginTransmission(INA219_I2C_ADDRESS_0);
+      Wire.write(whoami_reg);
+      if (Wire.endTransmission(false) == 0) {
+        Wire.requestFrom(addr, 1);
+        whoami_match = Wire.read() == whoami_id;
+      }
+    }
+    if (!whoami_match) {
+      return false;
+    }
+  }
+
   bool found = ina219->begin(wire);
   int index = 0;
   int bus = (wire == &Wire1) ? 1 : 0;
