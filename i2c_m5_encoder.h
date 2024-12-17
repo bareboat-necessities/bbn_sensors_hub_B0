@@ -14,7 +14,7 @@
 Unit_Encoder i2c_m5_encoder_sensor;
 signed short int i2c_m5_encoder_last_value = 0;
 
-void dsfsdafd() {
+void i2c_m5_encoder_report() {
   signed short int encoder_value = i2c_m5_encoder_sensor.getEncoderValue();
   bool btn_status                = i2c_m5_encoder_sensor.getButtonStatus();
   if (i2c_m5_encoder_last_value != encoder_value) {
