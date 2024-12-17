@@ -12,7 +12,7 @@ NMEA 0183 XDR Sensors on esp32 m5stack atomS3-lite
 
 AS3935 Lightning Detector connected to M5Stack AtomS3-Lite via i2c and one additional digital GPIO pin (interrupt)
 
-Generates NMEA-0183 XDR sentences (USB Serial with baud rate 4800) like this:
+Generates NMEA-0183 XDR sentences (USB Serial) like this:
 
 ````
 $BBXDR,D,1000,M,LIGHTNING_RANGE*16
@@ -42,7 +42,7 @@ Can be used for
 
 Supports multiple 1-wire Dallas Temperature sensors.
 
-Generates NMEA 0183 XDR and TXT sentences on USB serial with 4800 baud rate
+Generates NMEA 0183 XDR and TXT sentences on USB serial 
 
 ````
 $BBTXT,01,01,01,TEMPERATURE sensors found=1*0A
@@ -59,6 +59,17 @@ Waterproof Digital Temperature Sensor DS18B20 with GikFun plugin terminal board
 
 https://www.amazon.com/Gikfun-DS18B20-Waterproof-Digital-Temperature/dp/B08V93CTM2
 
+### INA219 Voltage and Current
+
+Load and your sensor need to share common ground.
+
+NMEA XDR Sentences:
+
+````
+$BBXDR,U,1.036,V,VOLT_INA219_2*28
+$BBXDR,I,0.000,A,AMPS_INA219_2*29
+$BBXDR,W,0.000,W,WATT_INA219_2*38
+````
 
 ## NMEA XDR Output
 
