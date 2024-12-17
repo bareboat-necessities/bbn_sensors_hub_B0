@@ -23,6 +23,8 @@ Adafruit_INA219 ina219_alt_3(INA219_I2C_ADDRESS_3);
 
 uint8_t ina219_addr[] = {INA219_I2C_ADDRESS_0, INA219_I2C_ADDRESS_1, INA219_I2C_ADDRESS_2, INA219_I2C_ADDRESS_3};
 
+bool bus_0_0x40_ina219 = false;
+
 void i2c_ina219_report(Adafruit_INA219 *ina219, int bus, int index) {
   // Read voltage and current from INA219.
   float shuntvoltage = ina219->getShuntVoltage_mV();
@@ -94,6 +96,9 @@ bool i2c_ina219_try_init(TwoWire *wire) {
     found |= i2c_ina219_begin(&ina219_alt_3, &Wire1);
   } else {
     found |= i2c_ina219_begin(&ina219_0, &Wire);
+    if (found) {
+      bus_0_0x40_ina219 = true;
+    }
     found |= i2c_ina219_begin(&ina219_1, &Wire);
     found |= i2c_ina219_begin(&ina219_2, &Wire);
     found |= i2c_ina219_begin(&ina219_3, &Wire);

@@ -30,7 +30,9 @@ void i2c_sensors_scan(bool i2c_alt_enable_scan) {
   i2c_sgp30_try_init();
   i2c_bh1750fvi_tr_try_init();
   i2c_vl53l0x_try_init();
-  i2c_m5_encoder_try_init();
+  if (!bus_0_0x40_ina219) /* avoid address conflict with ina219 */ {
+    i2c_m5_encoder_try_init();
+  }
 }
 
 void i2c_sensors_update() {
