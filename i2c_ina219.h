@@ -65,10 +65,10 @@ bool i2c_ina219_begin(Adafruit_INA219 *ina219, TwoWire *theWire) {
 
 bool i2c_ina219_try_init() {
   bool found = false;
-  found |= i2c_ina219_begin(ina219_0, &Wire);
-  found |= i2c_ina219_begin(ina219_1, &Wire);
-  found |= i2c_ina219_begin(ina219_2, &Wire);
-  found |= i2c_ina219_begin(ina219_3, &Wire);
+  found |= i2c_ina219_begin(&ina219_0, &Wire);
+  found |= i2c_ina219_begin(&ina219_1, &Wire);
+  found |= i2c_ina219_begin(&ina219_2, &Wire);
+  found |= i2c_ina219_begin(&ina219_3, &Wire);
   return found;
 }
 
