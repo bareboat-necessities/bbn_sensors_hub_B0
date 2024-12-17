@@ -47,7 +47,7 @@ void i2c_ina219_report(Adafruit_INA219 *ina219, int bus, int index) {
 }
 
 bool i2c_ina219_begin(Adafruit_INA219 *ina219, TwoWire *wire) {
-  bool found = (ina219->begin(wire) == 0);
+  bool found = ina219->begin(wire);
   int index = 0;
   int bus = (wire == &Wire1) ? 1 : 0;
   if (bus == 1) {
