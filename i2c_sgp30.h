@@ -30,7 +30,7 @@ void i2c_sgp30_report() {
     gen_nmea0183_xdr("$BBXDR,X,%.0f,,rawEthanol", i2c_sgp30_sensor.rawEthanol);
   }
   sgp_counter++;
-  if (sgp_counter == 10) {
+  if (sgp_counter == 6) {
     sgp_counter = 0;
     uint16_t TVOC_base, eCO2_base;
     i2c_sgp30_sensor.getIAQBaseline(&eCO2_base, &TVOC_base)
