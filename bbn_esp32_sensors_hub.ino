@@ -7,7 +7,7 @@ ReactESP app;
 
 #include "NmeaXDR.h"
 #include "Nmea0183Msg.h"
-#include "w1_sensors.h"
+#include "1w_sensors.h"
 #include "i2c_sensors.h"
 
 bool i2c_alt_enable = true;
