@@ -12,9 +12,9 @@ MODULE_4_20MA i2c_ain_4_20ma_sensor_1;  // I2C additional bus
 
 void i2c_ain_4_20ma_report(MODULE_4_20MA *i2c_ain_4_20ma_sensor) {
   if (i2c_ain_4_20ma_sensor == &i2c_ain_4_20ma_sensor_0) {
-    gen_nmea0183_xdr("$BBXDR,I,%.5f,A,AMPS", (float)(i2c_ain_4_20ma_sensor.getCurrentValue(0)) / 100.0 / 1000.0); // Amp
+    gen_nmea0183_xdr("$BBXDR,I,%.5f,A,AMPS", (float)(i2c_ain_4_20ma_sensor->getCurrentValue(0)) / 100.0 / 1000.0); // A
   } else {
-    gen_nmea0183_xdr("$BBXDR,I,%.5f,A,AMPS_1", (float)(i2c_ain_4_20ma_sensor.getCurrentValue(0)) / 100.0 / 1000.0);
+    gen_nmea0183_xdr("$BBXDR,I,%.5f,A,AMPS_1", (float)(i2c_ain_4_20ma_sensor->getCurrentValue(0)) / 100.0 / 1000.0);
   }
 }
 
