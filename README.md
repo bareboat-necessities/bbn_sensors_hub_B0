@@ -1,6 +1,8 @@
 # bbn_esp32_sensors_hub
 NMEA 0183 XDR Sensors on esp32 m5stack atomS3-lite
 
+No soldering required. Connect sensors to i2c. Load firmware of atomS3-lite. Plug and play.
+
 ## Hardware
 
 - m5stack atomS3-lite:  https://shop.m5stack.com/products/atoms3-lite-esp32s3-dev-kit
@@ -70,6 +72,9 @@ $BBXDR,U,1.036,V,VOLT_INA219_2*28
 $BBXDR,I,0.000,A,AMPS_INA219_2*29
 $BBXDR,W,0.000,W,WATT_INA219_2*38
 ````
+
+https://www.adafruit.com/product/904
+
 
 ###  SGP30 Air Quality and TVOC sensor connected to M5Stack AtomS3-Lite via i2c
 
