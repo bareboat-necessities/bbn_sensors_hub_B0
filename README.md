@@ -9,6 +9,12 @@ No soldering required. Connect sensors to i2c. Load firmware to atomS3-lite.
 - m5stack atomS3-lite:  https://shop.m5stack.com/products/atoms3-lite-esp32s3-dev-kit
 - m5stack ATOMIC PortABC Extension Base: https://shop.m5stack.com/products/atomic-portabc-extension-base
 
+### Accessories
+
+- Grove to Adafruit Cables for i2c
+- Grove T-Connector https://shop.m5stack.com/products/grove-t-connector-5pcs-a-pack
+- Grove2Dupont Conversion Cable https://shop.m5stack.com/products/grove2dupont-conversion-cable-20cm-5pairs
+
 ## Integration with SignalK
 
 Integration with SignalK is done via NMEA XDR Parser SignalK plugin.
