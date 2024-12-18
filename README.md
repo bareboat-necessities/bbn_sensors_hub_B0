@@ -11,9 +11,11 @@ No soldering required. Connect sensors to i2c. Load firmware to atomS3-lite.
 
 ### Accessories
 
-- Grove to StemmaQT Qwiic Cables for i2c, or StemmaQT Qwiic to Dupont
+- Grove to StemmaQT Cables for i2c, or StemmaQT to Dupont
 - Grove T-Connector https://shop.m5stack.com/products/grove-t-connector-5pcs-a-pack
 - Grove2Dupont Conversion Cable https://shop.m5stack.com/products/grove2dupont-conversion-cable-20cm-5pairs
+
+(There are 3 kinds of connector different sensor could use: m5stack Grove, Adafruit Stemma QT, SparkFun Qwiic)
 
 ## Integration with SignalK
 
