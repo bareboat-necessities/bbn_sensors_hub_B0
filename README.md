@@ -177,7 +177,6 @@ Generates NMEA-0183 XDR sentences (USB Serial) like this:
 
 ````
 $BBXDR,U,12.634,V,VOLT*50
-$BBXDR,U,12.634,V,VOLT*50
 $BBXDR,U,12.633,V,VOLT*57
 ````
 
@@ -197,14 +196,6 @@ Generates NMEA-0183 XDR sentences (USB Serial) like this:
 ````
 $BBXDR,X,132.0,L,ILLU*68
 $BBXDR,X,128.0,L,ILLU*63
-$BBXDR,X,128.0,L,ILLU*63
-$BBXDR,X,136.0,L,ILLU*6C
-$BBXDR,X,128.0,L,ILLU*63
-$BBXDR,X,132.0,L,ILLU*68
-$BBXDR,X,132.0,L,ILLU*68
-$BBXDR,X,128.0,L,ILLU*63
-$BBXDR,X,128.0,L,ILLU*63
-$BBXDR,X,132.0,L,ILLU*68
 ````
 
 M5Stack DLight illuminance sensor :
