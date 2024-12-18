@@ -15,6 +15,10 @@ Integration with SignalK is done via NMEA XDR Parser SignalK plugin.
 
 More: https://github.com/GaryWSmith/xdr-parser-plugin
 
+Recommended config file for XDR Parser SignalK plugin:
+
+https://github.com/bareboat-necessities/lysmarine_gen/blob/bookworm/install-scripts/4-server/files/xdrParser-plugin.json
+
 ## Supported Sensors
 
 ### AS3935 Lightning Detector sensor to NMEA-0183
