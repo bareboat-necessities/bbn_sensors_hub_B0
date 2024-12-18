@@ -203,7 +203,7 @@ https://shop.m5stack.com/products/dlight-unit-ambient-light-sensor-bh1750fvi-tr
 
 ### Environmental Air Sensors (Pressure/Temp/Humidity) BMP280, DHT12, QMP6988, SHT30
 
-
+Connected via i2c
 
 ## NMEA XDR Output
 
