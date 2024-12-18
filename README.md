@@ -132,7 +132,7 @@ Time-of-Flight Distance Ranging Sensor Unit (VL53L0X) sensor :
 https://shop.m5stack.com/products/tof-sensor-unit
 
 
-### Bosch BME680 
+### Bosch BME680 Air Sensor
 
 Bosch BME680 Sensor to NMEA 0183 via i2c
 
@@ -157,7 +157,7 @@ Bosch BME680 with Temperature Humidity Air Pressure Sensor:
 [Adafruit BME680](https://www.adafruit.com/product/3660)
 
 
-### M5Stack 4-20mA current sensors to NMEA-0183
+### M5Stack 4-20mA current sensors to NMEA-0183 (up to two with secondary i2c bus)
 
 M5Stack Analog to I2C Unit (4-20mA Input) connected to M5Stack AtomS3-Lite via i2c
 
@@ -183,7 +183,7 @@ https://www.amazon.com/4-20mA-Liquid-Sensor-Throw-Sensors/dp/B07WDK2PRN
 (Two wires from that sensor connect to IN+ and IN- on M5Stack Unit and on same terminal the current loop need to be powered from some DC power source)
 
 
-### Voltmeter on m5stack AtomS3 with ADS1115 M5Stack Voltmeter unit to NMEA 0183
+### Voltmeter on m5stack AtomS3 with ADS1115 M5Stack Voltmeter (up to two with secondary i2c bus)
 
 
 M5Stack Voltmeter unit connected to M5Stack AtomS3-Lite via i2c
