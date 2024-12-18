@@ -155,7 +155,6 @@ Generates NMEA-0183 XDR sentences (USB Serial) like this:
 ````
 $BBXDR,I,0.00480,A,AMPS*6B
 $BBXDR,I,0.00481,A,AMPS*6A
-$BBXDR,I,0.00481,A,AMPS*6A
 ````
 
 Analog to I2C Unit 4-20mA Input (STM32G030)
