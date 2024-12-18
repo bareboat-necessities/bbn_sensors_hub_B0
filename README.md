@@ -59,7 +59,7 @@ Waterproof Digital Temperature Sensor DS18B20 with GikFun plugin terminal board
 
 https://www.amazon.com/Gikfun-DS18B20-Waterproof-Digital-Temperature/dp/B08V93CTM2
 
-### INA219 Voltage and Current
+### INA219 Voltage and Current sensors (up to eight)
 
 Load and your sensor need to share common ground.
 
@@ -118,7 +118,7 @@ Time-of-Flight Distance Ranging Sensor Unit (VL53L0X) sensor :
 https://shop.m5stack.com/products/tof-sensor-unit
 
 
-### Bosch BME680 to NMEA 0183
+### Bosch BME680 
 
 Bosch BME680 Sensor to NMEA 0183 via i2c
 
@@ -168,6 +168,32 @@ Would be useful for fluid level sensors like this one:
 
 https://www.amazon.com/4-20mA-Liquid-Sensor-Throw-Sensors/dp/B07WDK2PRN
 (Two wires from that sensor connect to IN+ and IN- on M5Stack Unit and on same terminal the current loop need to be powered from some DC power source)
+
+
+### Voltmeter on m5stack AtomS3 with ADS1115 M5Stack Voltmeter unit to NMEA 0183
+
+
+M5Stack Voltmeter unit connected to M5Stack AtomS3-Lite via i2c
+
+Generates NMEA-0183 XDR sentences (USB Serial) like this:
+
+````
+$BBXDR,U,12.634,V,VOLT*50
+$BBXDR,U,12.634,V,VOLT*50
+$BBXDR,U,12.634,V,VOLT*50
+$BBXDR,U,12.633,V,VOLT*57
+$BBXDR,U,12.633,V,VOLT*57
+$BBXDR,U,12.633,V,VOLT*57
+$BBXDR,U,12.633,V,VOLT*57
+````
+
+The code is set up to measure 12 V circuits. You can easily modify it for other voltage ranges.
+
+M5Stack Voltmeter unit:
+
+https://shop.m5stack.com/products/voltmeter-unit-ads1115
+
+
 
 
 ## NMEA XDR Output
