@@ -105,7 +105,7 @@ SGP30 Air Quality and TVOC sensor :
 
 Time-of-Flight Distance Ranging Sensor Unit (VL53L0X) sensor connected to M5Stack AtomS3-Lite via i2c
 
-Generates NMEA-0183 XDR sentences (USB Serial with baud rate 4800) like this:
+Generates NMEA-0183 XDR sentences (USB Serial) like this:
 
 ````
 $BBXDR,D,0.2410,M,RANGE_VL53L0X*66
