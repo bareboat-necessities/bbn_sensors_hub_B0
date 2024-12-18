@@ -29,7 +29,7 @@ bool i2c_ain_4_20ma_try_init(TwoWire *wire = &Wire, uint8_t sda = SDA, uint8_t s
     delay(10);
   }
   if (i2c_ain_4_20ma_found) {
-    gen_nmea0183_msg("$BBTXT,01,01,01,ELECTRIC found 4-20mAmp sensor at address=0x%s",
+    gen_nmea0183_msg("$BBTXT,01,01,01,ELECTRICAL found 4-20mAmp sensor at address=0x%s",
       (String(MODULE_4_20MA_ADDR, HEX) + String((wire == &Wire ? " main bus" : " alt bus"))).c_str());
     app.onRepeat(5000, [i2c_ain_4_20ma_sensor]() {
       i2c_ain_4_20ma_report(i2c_ain_4_20ma_sensor);
