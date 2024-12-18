@@ -100,7 +100,6 @@ SGP30 Air Quality and TVOC sensor :
 [M5Stack SGP30 Air Quality and TVOC sensor](https://shop.m5stack.com/products/tvoc-eco2-gas-unit-sgp30)
 
 
-
 ### Time-of-Flight Distance Ranging Sensor Unit (VL53L0X) 
 
 Time-of-Flight Distance Ranging Sensor Unit (VL53L0X) sensor connected to M5Stack AtomS3-Lite via i2c
@@ -110,7 +109,6 @@ Generates NMEA-0183 XDR sentences (USB Serial) like this:
 ````
 $BBXDR,D,0.2410,M,RANGE_VL53L0X*66
 $BBXDR,D,0.2430,M,RANGE_VL53L0X*64
-
 ````
 
 Time-of-Flight Distance Ranging Sensor Unit (VL53L0X) sensor :
@@ -180,10 +178,6 @@ Generates NMEA-0183 XDR sentences (USB Serial) like this:
 ````
 $BBXDR,U,12.634,V,VOLT*50
 $BBXDR,U,12.634,V,VOLT*50
-$BBXDR,U,12.634,V,VOLT*50
-$BBXDR,U,12.633,V,VOLT*57
-$BBXDR,U,12.633,V,VOLT*57
-$BBXDR,U,12.633,V,VOLT*57
 $BBXDR,U,12.633,V,VOLT*57
 ````
 
@@ -194,7 +188,28 @@ M5Stack Voltmeter unit:
 https://shop.m5stack.com/products/voltmeter-unit-ads1115
 
 
+### M5Stack DLight Illuminance sensor to NMEA-0183
 
+M5Stack DLight illuminance sensor connected to M5Stack AtomS3-Lite via i2c
+
+Generates NMEA-0183 XDR sentences (USB Serial) like this:
+
+````
+$BBXDR,X,132.0,L,ILLU*68
+$BBXDR,X,128.0,L,ILLU*63
+$BBXDR,X,128.0,L,ILLU*63
+$BBXDR,X,136.0,L,ILLU*6C
+$BBXDR,X,128.0,L,ILLU*63
+$BBXDR,X,132.0,L,ILLU*68
+$BBXDR,X,132.0,L,ILLU*68
+$BBXDR,X,128.0,L,ILLU*63
+$BBXDR,X,128.0,L,ILLU*63
+$BBXDR,X,132.0,L,ILLU*68
+````
+
+M5Stack DLight illuminance sensor :
+
+https://shop.m5stack.com/products/dlight-unit-ambient-light-sensor-bh1750fvi-tr
 
 ## NMEA XDR Output
 
