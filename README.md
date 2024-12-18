@@ -9,6 +9,12 @@ No soldering required. Connect sensors to i2c. Load firmware to atomS3-lite.
 - m5stack atomS3-lite:  https://shop.m5stack.com/products/atoms3-lite-esp32s3-dev-kit
 - m5stack ATOMIC PortABC Extension Base: https://shop.m5stack.com/products/atomic-portabc-extension-base
 
+## Integration with SignalK
+
+Integration with SignalK is done via NMEA XDR Parser SignalK plugin.
+
+More: https://github.com/GaryWSmith/xdr-parser-plugin
+
 ## Supported Sensors
 
 ### AS3935 Lightning Detector sensor to NMEA-0183
