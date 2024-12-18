@@ -10,7 +10,7 @@ NMEA 0183 XDR Sensors on esp32 m5stack atomS3-lite
 
 ### AS3935 Lightning Detector sensor to NMEA-0183
 
-AS3935 Lightning Detector connected to M5Stack AtomS3-Lite via i2c and one additional digital GPIO pin (interrupt)
+AS3935 Lightning Detector connected to M5Stack AtomS3-Lite via i2c and one additional digital GPIO pin (G7) (interrupt)
 
 Generates NMEA-0183 XDR sentences (USB Serial) like this:
 
@@ -98,6 +98,24 @@ Here are some TVOC levels and their associated health effects:
 SGP30 Air Quality and TVOC sensor :
 
 [M5Stack SGP30 Air Quality and TVOC sensor](https://shop.m5stack.com/products/tvoc-eco2-gas-unit-sgp30)
+
+
+
+### Time-of-Flight Distance Ranging Sensor Unit (VL53L0X) 
+
+Time-of-Flight Distance Ranging Sensor Unit (VL53L0X) sensor connected to M5Stack AtomS3-Lite via i2c
+
+Generates NMEA-0183 XDR sentences (USB Serial with baud rate 4800) like this:
+
+````
+$BBXDR,D,0.2410,M,RANGE_VL53L0X*66
+$BBXDR,D,0.2430,M,RANGE_VL53L0X*64
+
+````
+
+Time-of-Flight Distance Ranging Sensor Unit (VL53L0X) sensor :
+
+https://shop.m5stack.com/products/tof-sensor-unit
 
 
 ## NMEA XDR Output
