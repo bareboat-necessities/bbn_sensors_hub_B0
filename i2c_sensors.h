@@ -13,6 +13,7 @@
 #include "i2c_vl53l0x.h"
 #include "i2c_ina219.h"
 #include "i2c_as3935.h"
+#include "gpio_jsn_sr04t.h"
 
 void i2c_sensors_scan(bool i2c_alt_enable_scan) {
   i2c_ina219_try_init(&Wire);
@@ -32,6 +33,7 @@ void i2c_sensors_scan(bool i2c_alt_enable_scan) {
   i2c_bh1750fvi_tr_try_init();
   i2c_vl53l0x_try_init();
   i2c_as3935_try_init();
+  gpio_jsn_sr04t_try_init();
 }
 
 void i2c_sensors_update() {
