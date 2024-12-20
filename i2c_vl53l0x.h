@@ -23,7 +23,7 @@ void i2c_vl53l0x_report() {
 bool i2c_vl53l0x_try_init() {
   bool i2c_vl53l0x_found = false;
   for (int i = 0; i < 3; i++) {
-    i2c_vl53l0x_found = i2c_vl53l0x_sensor.begin(VL53L0X_I2C_ADDR, false, &Wire);
+    i2c_vl53l0x_found = i2c_vl53l0x_sensor.begin(VL53L0X_I2C_ADDR, false, &Wire1);
     if (i2c_vl53l0x_found) {
       break;
     }

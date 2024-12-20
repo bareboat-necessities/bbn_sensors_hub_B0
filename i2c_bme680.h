@@ -12,7 +12,7 @@
 
 #define SEALEVELPRESSURE_HPA (1013.25)
 
-Adafruit_BME680 i2c_bme680_sensor(&Wire); // I2C
+Adafruit_BME680 i2c_bme680_sensor(&Wire1); // I2C
 
 void i2c_bme680_report() {
   if (i2c_bme680_sensor.performReading()) {

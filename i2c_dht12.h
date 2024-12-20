@@ -18,7 +18,7 @@ void i2c_dht12_report() {
 bool i2c_dht12_try_init() {
   bool i2c_dht12_found = false;
   for (int i = 0; i < 3; i++) {
-    i2c_dht12_found = i2c_dht12_sensor.begin(&Wire, DHT12_I2C_ADDR, G2, G1, 100000U);
+    i2c_dht12_found = i2c_dht12_sensor.begin(&Wire1, DHT12_I2C_ADDR, G38, G39, 100000UL);
     if (i2c_dht12_found) {
       break;
     }

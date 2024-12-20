@@ -53,7 +53,7 @@ bool i2c_as3935_try_init() {
   bool i2c_as3935_found = false;
   pinMode(lightningInt, INPUT); // When lightning is detected the interrupt pin goes HIGH.
 
-  i2c_as3935_found = i2c_as3935_sensor.begin(Wire);
+  i2c_as3935_found = i2c_as3935_sensor.begin(Wire1);
   if (i2c_as3935_found) {
     i2c_as3935_sensor.maskDisturber(true);
     i2c_as3935_sensor.setNoiseLevel(noiseFloor);
