@@ -1,7 +1,7 @@
 # bbn_esp32_gpio_sensors_hub
 NMEA 0183 XDR Sensors on esp32 m5stack atomS3-lite via GPIO
 
-No soldering required. Connect sensors to i2c. Load firmware to atomS3-lite.
+No soldering required. Connect sensors to i2c or specified GPIO pins. Load firmware to atomS3-lite.
 (On Bareboat Necessites OS it's just copy-paste of a script, see below). Plug and play.
 
 ## Hardware
@@ -29,54 +29,8 @@ https://github.com/bareboat-necessities/lysmarine_gen/blob/bookworm/install-scri
 
 ## Supported Sensors
 
-### AS3935 Lightning Detector sensor to NMEA-0183
 
-AS3935 Lightning Detector connected to M5Stack AtomS3-Lite via i2c and one additional digital GPIO pin (G7) (interrupt)
-
-Generates NMEA-0183 XDR sentences (USB Serial) like this:
-
-````
-$BBXDR,D,1000,M,LIGHTNING_RANGE*16
-$BBXDR,X,410415,,LIGHTNING_LEVEL*4A
-````
-
-DFRobot Gravity AS3935 Lightning Detector:
-
-https://www.dfrobot.com/product-1828.html
-
-### Multiple Dallas Temperature 1-Wire Sensors
-
-
-DS18B20 with GikFun plugin terminal board (includes required pull-up resistor for 1-wire bus)
-
-DS18B20 data is connected to pin G8 on m5stack AtomS3-lite
-
-Can be used for
-
-- Engine temperature
-- Exhaust temperature
-- Fridge temperature
-- Engine coolant temperature
-- Batteries bank temperature
-- MPPT controller temperature
-- etc
-
-Supports multiple 1-wire Dallas Temperature sensors.
-
-Generates NMEA 0183 XDR and TXT sentences on USB serial 
-
-````
-$BBTXT,01,01,01,TEMPERATURE sensors found=1*0A
-$BBTXT,01,01,02,TEMPERATURE found sensor address=28478546D4523ABF*1A
-$BBXDR,C,23.94,C,TEMP_28478546D4523ABF*38
-$BBXDR,C,24.00,C,TEMP_28478546D4523ABF*32
-````
-
-Waterproof Digital Temperature Sensor DS18B20 with GikFun plugin terminal board
-
-https://www.amazon.com/Gikfun-DS18B20-Waterproof-Digital-Temperature/dp/B08V93CTM2
-
-### INA219 Voltage and Current sensors (up to eight)
+### INA219 Voltage and Current sensors (up to four on secondary i2c bus)
 
 Load and your sensor need to share common ground.
 
@@ -157,7 +111,7 @@ Bosch BME680 with Temperature Humidity Air Pressure Sensor:
 [Adafruit BME680](https://www.adafruit.com/product/3660)
 
 
-### M5Stack 4-20mA current sensors to NMEA-0183 (up to two with secondary i2c bus)
+### M5Stack 4-20mA current sensor to NMEA-0183 (on secondary i2c bus)
 
 M5Stack Analog to I2C Unit (4-20mA Input) connected to M5Stack AtomS3-Lite via i2c
 
@@ -183,7 +137,7 @@ https://www.amazon.com/4-20mA-Liquid-Sensor-Throw-Sensors/dp/B07WDK2PRN
 (Two wires from that sensor connect to IN+ and IN- on M5Stack Unit and on same terminal the current loop need to be powered from some DC power source)
 
 
-### Voltmeter on m5stack AtomS3 with ADS1115 M5Stack Voltmeter (up to two with secondary i2c bus)
+### Voltmeter on m5stack AtomS3 with ADS1115 M5Stack Voltmeter (on secondary i2c bus)
 
 
 M5Stack Voltmeter unit connected to M5Stack AtomS3-Lite via i2c
@@ -202,7 +156,7 @@ M5Stack Voltmeter unit:
 https://shop.m5stack.com/products/voltmeter-unit-ads1115
 
 
-### M5Stack DLight Illuminance sensor to NMEA-0183
+### M5Stack DLight Illuminance sensor 
 
 M5Stack DLight illuminance sensor connected to M5Stack AtomS3-Lite via i2c
 
@@ -217,38 +171,6 @@ M5Stack DLight illuminance sensor :
 
 https://shop.m5stack.com/products/dlight-unit-ambient-light-sensor-bh1750fvi-tr
 
-### JSN-SR04T Waterproof Ultrasonic Sensor to NMEA 0183 XDR
-
-https://www.makerguides.com/interfacing-esp32-and-jsn-sr04t-waterproof-ultrasonic-sensor/
-
-https://bitbucket.org/teckel12/arduino-new-ping/wiki/Home
-
-Connecting to m5stack atomS3-Lite
-
-Pins:
-
-- G6 to Echo_TX
-- G5 to Trig_RX
-- VCC 3.3 to VCC
-- GND to GND
-
-Bilge Level Sensor
-
-Install it into a cap of PVC pipe.
-Drill a hole for air to escape.
-Mount PVC pipe with sensor on top of it
-in a bilge. The sensor will measure distance to water surface in the bilge,
-giving you bilge level.
-
-NMEA 0183 XDR
-
-Produces NMEA 0183 XDR via USB serial with baud rate 4800
-
-````
-$BBXDR,D,0.52,M,Range_JSN_S04T*55
-$BBXDR,D,0.70,M,Range_JSN_S04T*55
-$BBXDR,D,0.71,M,Range_JSN_S04T*54
-````
 
 ### Environmental Air Sensors (Pressure/Temp/Humidity) BMP280, DHT12, QMP6988, SHT30
 
