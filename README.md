@@ -45,7 +45,7 @@ M5Stack PIR Motion Sensor (AS312)
 
 https://shop.m5stack.com/products/pir-module
 
-Can detect a walrus on your boat or soneone else :)
+Can detect a walrus on your boat or someone else :)
 
 
 ###  Ocean TDS CQRobot (Total Dissolved Solids) Meter Sensor to NMEA-0183
@@ -54,7 +54,7 @@ https://www.cqrobot.com/index.php?route=product/product&product_id=1122
 
 M5Stack with AtomS3-Lite and Ocean TDS CQRobot (Total Dissolved Solids) Meter Sensor CQRSENTDS01 to NMEA-0183.
 
-Connected to GPIO pin G8 as analog input.
+Connected to GPIO pin G7 as analog input.
 
 Generates NMEA-0183 XDR sentences (USB Serial with baud rate 4800) like this:
 
