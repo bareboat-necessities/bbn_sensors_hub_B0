@@ -12,7 +12,7 @@ CQRobotTDS tds_sensor(TDS_pin, 3.3, 4096.0 /* For ESP32 built-in 12bit ADC */);
 
 void gpio_tds_cqrsentds01_report() {
   float temp = 25.0; // TODO: read temperature from a real sensor
-  float tdsValuePPM = tds.update(temp);
+  float tdsValuePPM = tds_sensor.update(temp);
   gen_nmea0183_xdr("$BBXDR,X,%.4f,S,TDS", (float)(tdsValuePPM * 0.001));        // Parts per Thousand
 }
 
