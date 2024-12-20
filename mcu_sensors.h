@@ -14,6 +14,7 @@
 #include "i2c_ina219.h"
 #include "gpio_pir_as312.h"
 #include "gpio_tds_cqrsentds01.h"
+#include "gpio_limit_switch.h"
 
 void mcu_sensors_scan() {
   i2c_ina219_try_init(&Wire1);
@@ -29,6 +30,7 @@ void mcu_sensors_scan() {
   i2c_vl53l0x_try_init();
   gpio_pir_as312_try_init();
   gpio_tds_cqrsentds01_try_init();
+  gpio_limit_switch_try_init();
 }
 
 void mcu_sensors_update() {
