@@ -1,33 +1,8 @@
-# bbn_esp32_sensors_hub
+# bbn_esp32_gpio_sensors_hub
 NMEA 0183 XDR Sensors on esp32 m5stack atomS3-lite
 
 No soldering required. Connect sensors to i2c. Load firmware to atomS3-lite.
 (On Bareboat Necessites OS it's just copy-paste of a script, see below). Plug and play.
-
-## Table of Content
-
-- [bbn_esp32_sensors_hub](#bbn-esp32-sensors-hub)
-  * [Hardware](#hardware)
-    + [Accessories](#accessories)
-  * [Integration with SignalK](#integration-with-signalk)
-  * [Supported Sensors](#supported-sensors)
-    + [AS3935 Lightning Detector sensor to NMEA-0183](#as3935-lightning-detector-sensor-to-nmea-0183)
-    + [Multiple Dallas Temperature 1-Wire Sensors](#multiple-dallas-temperature-1-wire-sensors)
-    + [INA219 Voltage and Current sensors (up to eight)](#ina219-voltage-and-current-sensors--up-to-eight)
-    + [SGP30 Air Quality and TVOC sensor connected to M5Stack AtomS3-Lite via i2c](#sgp30-air-quality-and-tvoc-sensor-connected-to-m5stack-atoms3-lite-via-i2c)
-    + [Time-of-Flight Distance Ranging Sensor Unit (VL53L0X)](#time-of-flight-distance-ranging-sensor-unit--vl53l0x)
-    + [Bosch BME680 Air Sensor](#bosch-bme680-air-sensor)
-    + [M5Stack 4-20mA current sensors to NMEA-0183 (up to two with secondary i2c bus)](#m5stack-4-20ma-current-sensors-to-nmea-0183--up-to-two-with-secondary-i2c-bus)
-    + [Voltmeter on m5stack AtomS3 with ADS1115 M5Stack Voltmeter (up to two with secondary i2c bus)](#voltmeter-on-m5stack-atoms3-with-ads1115-m5stack-voltmeter--up-to-two-with-secondary-i2c-bus)
-    + [M5Stack DLight Illuminance sensor to NMEA-0183](#m5stack-dlight-illuminance-sensor-to-nmea-0183)
-    + [JSN-SR04T Waterproof Ultrasonic Sensor to NMEA 0183 XDR](#jsn-sr04t-waterproof-ultrasonic-sensor-to-nmea-0183-xdr)
-    + [Environmental Air Sensors (Pressure/Temp/Humidity) BMP280, DHT12, QMP6988, SHT30](#environmental-air-sensors--pressure-temp-humidity--bmp280--dht12--qmp6988--sht30)
-  * [NMEA XDR Output](#nmea-xdr-output)
-  * [Loading Firmware](#loading-firmware)
-    + [On Bareboat Necessities (BBN) OS (full)](#on-bareboat-necessities--bbn--os--full)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 ## Hardware
 
@@ -292,9 +267,9 @@ socat stdio /dev/ttyACM1
 ### On Bareboat Necessities (BBN) OS (full)
 
 ````
-if [ -f bbn-flash-m5-hub.sh ]; then rm bbn-flash-m5-hub.sh; fi
-wget https://raw.githubusercontent.com/bareboat-necessities/my-bareboat/refs/heads/master/m5stack-tools/bbn-flash-m5-hub.sh
-chmod +x bbn-flash-m5-hub.sh 
-./bbn-flash-m5-hub.sh -p /dev/ttyACM1
+if [ -f bbn-flash-m5-gpio.sh ]; then rm bbn-flash-m5-gpio.sh; fi
+wget https://raw.githubusercontent.com/bareboat-necessities/my-bareboat/refs/heads/master/m5stack-tools/bbn-flash-m5-gpio.sh
+chmod +x bbn-flash-m5-gpio.sh
+./bbn-flash-m5-gpio.sh -p /dev/ttyACM1
 ````
 
