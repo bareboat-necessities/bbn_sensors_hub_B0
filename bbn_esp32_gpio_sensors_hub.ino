@@ -9,8 +9,6 @@ ReactESP app;
 #include "Nmea0183Msg.h"
 #include "i2c_sensors.h"
 
-bool i2c_alt_enable = true;
-
 void setup() {
   auto cfg = M5.config();
   AtomS3.begin(cfg);
