@@ -51,6 +51,6 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: bbn_esp32_gpio_sensors_hub_bin*.zip
-        tag: ${{ github.ref == 'refs/heads/main' && 'test' || github.ref }}
+        tag: ${{ github.ref == 'refs/heads/main' && 'vTest' || github.ref }}
         overwrite: true
         file_glob: true
