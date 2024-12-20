@@ -1,5 +1,5 @@
 # bbn_esp32_gpio_sensors_hub
-NMEA 0183 XDR Sensors on esp32 m5stack atomS3-lite
+NMEA 0183 XDR Sensors on esp32 m5stack atomS3-lite via GPIO
 
 No soldering required. Connect sensors to i2c. Load firmware to atomS3-lite.
 (On Bareboat Necessites OS it's just copy-paste of a script, see below). Plug and play.
