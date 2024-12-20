@@ -33,16 +33,16 @@ jobs:
     - name: Make merged .bin
       run: >
         python3 "$HOME/.arduino15/packages/esp32/tools/esptool_py/4.5.1/esptool.py" 
-        --chip esp32s3 merge_bin -o $HOME/work/bbn_esp32_sensors_hub/bbn_esp32_sensors_hub/build/bbn_esp32_sensors_hub_firmware.bin 
+        --chip esp32s3 merge_bin -o $HOME/work/bbn_esp32_gpio_sensors_hub/bbn_esp32_gpio_sensors_hub/build/bbn_esp32_gpio_sensors_hub_firmware.bin 
         --flash_mode dio --flash_freq 80m --flash_size 4MB 
-        0x0 "$HOME/work/bbn_esp32_sensors_hub/bbn_esp32_sensors_hub/build/bbn_esp32_sensors_hub.ino.bootloader.bin" 
-        0x8000 "$HOME/work/bbn_esp32_sensors_hub/bbn_esp32_sensors_hub/build/bbn_esp32_sensors_hub.ino.partitions.bin" 
+        0x0 "$HOME/work/bbn_esp32_gpio_sensors_hub/bbn_esp32_gpio_sensors_hub/build/bbn_esp32_gpio_sensors_hub.ino.bootloader.bin" 
+        0x8000 "$HOME/work/bbn_esp32_gpio_sensors_hub/bbn_esp32_gpio_sensors_hub/build/bbn_esp32_gpio_sensors_hub.ino.partitions.bin" 
         0xe000 "$HOME/.arduino15/packages/esp32/hardware/esp32/2.0.17/tools/partitions/boot_app0.bin" 
-        0x10000 "$HOME/work/bbn_esp32_sensors_hub/bbn_esp32_sensors_hub/build/bbn_esp32_sensors_hub.ino.bin"
+        0x10000 "$HOME/work/bbn_esp32_gpio_sensors_hub/bbn_esp32_gpio_sensors_hub/build/bbn_esp32_gpio_sensors_hub.ino.bin"
 
     - name: Make zip
       run: |
-        ls /home/runner/work/bbn_esp32_sensors_hub/bbn_esp32_sensors_hub/build/*.bin /home/runner/work/bbn_esp32_sensors_hub/bbn_esp32_sensors_hub/build/*.csv | zip bbn_esp32_sensors_hub_bin-$(date +%Y-%m-%d).zip -j -@
+        ls /home/runner/work/bbn_esp32_gpio_sensors_hub/bbn_esp32_gpio_sensors_hub/build/*.bin /home/runner/work/bbn_esp32_gpio_sensors_hub/bbn_esp32_gpio_sensors_hub/build/*.csv | zip bbn_esp32_gpio_sensors_hub_bin-$(date +%Y-%m-%d).zip -j -@
         pwd
         ls *.zip
         
@@ -50,7 +50,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: bbn_esp32_sensors_hub_bin*.zip
+        file: bbn_esp32_gpio_sensors_hub_bin*.zip
         tag: ${{ github.ref }}
         overwrite: true
         file_glob: true
