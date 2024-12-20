@@ -31,7 +31,7 @@ https://github.com/bareboat-necessities/lysmarine_gen/blob/bookworm/install-scri
 
 ### PIR Motion Sensor (AS312) to NMEA-0183
 
-PIR Motion Sensor (AS312) connected to M5Stack AtomS3-Lite via GPIO digital pin (see .ino code code pin number)
+PIR Motion Sensor (AS312) connected to M5Stack AtomS3-Lite via GPIO digital pin (see gpio_pir_as312.h code pin number)
 
 White 'IN^' goes to the digital GPIO pin of m5Atom.
 
