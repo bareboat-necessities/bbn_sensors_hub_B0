@@ -22,3 +22,5 @@ void gpio_tds_cqrsentds01_try_init() {
     gpio_tds_cqrsentds01_report();
   });
 }
+
+#endif
