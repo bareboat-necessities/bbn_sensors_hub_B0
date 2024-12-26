@@ -77,7 +77,9 @@ bool i2c_ina219_begin(Adafruit_INA219 *ina219, TwoWire *wire) {
       better precision.
     */
     //ina219->setCalibration_32V_1A();
-    //ina219->setCalibration_16V_400mA();
+    if (index == 3) {  // calibrate 0x45 one differently for other use cases
+      ina219->setCalibration_16V_400mA();
+    }
     app.onRepeat(2000, [ina219, bus, index]() {
       i2c_ina219_report(ina219, bus, index);
     });
