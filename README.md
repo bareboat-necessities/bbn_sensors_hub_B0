@@ -36,7 +36,7 @@ for pin assignment)
 
 White 'IN^' goes to the digital GPIO pin of m5Atom.
 
-Generates NMEA-0183 XDR sentences (USB Serial with baud rate 4800) like this:
+Generates NMEA-0183 XDR sentences (USB Serial) like this:
 
 ````
 $BBXDR,S,1,,PIR_MOTION*26
@@ -53,7 +53,7 @@ Can detect a walrus on your boat or someone else :)
 M5Stack Limit Switch connected to M5Stack AtomS3-Lite via GPIO digital pin (see gpio_limit_switch.h 
 code for pin assignment)
 
-Generates NMEA-0183 XDR sentences (USB Serial with baud rate 4800) like this:
+Generates NMEA-0183 XDR sentences (USB Serial) like this:
 
 ````
 $BBXDR,S,0,,LIMIT_CUR*63
@@ -81,7 +81,7 @@ M5Stack with AtomS3-Lite and Ocean TDS CQRobot (Total Dissolved Solids) Meter Se
 
 Connected to GPIO pin G7 as analog input.
 
-Generates NMEA-0183 XDR sentences (USB Serial with baud rate 4800) like this:
+Generates NMEA-0183 XDR sentences (USB Serial) like this:
 
 Total Dissolved Solids in ppt (Parts per Thousand):
 
@@ -204,7 +204,7 @@ Pick up resistor with lower % tolerance.
 
 #### NMEA 0183 XDR Sentences for resistance
 
-NMEA 0183 is on USB serial with baud rate of 4800
+NMEA 0183 is on USB serial with baud rate of 115200
 
 Example sentences:
 
