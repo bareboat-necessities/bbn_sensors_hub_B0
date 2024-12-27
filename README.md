@@ -378,6 +378,7 @@ Connected via i2c
 on USB-C port with baud rate 115200
 
 ````
+stty -F /dev/ttyACM1 115200
 socat stdio /dev/ttyACM1
 ````
 
