@@ -13,7 +13,7 @@ void setup() {
   auto cfg = M5.config();
   AtomS3.begin(cfg);
   Wire1.begin(G38, G39, 100000UL);
-  Serial.begin(115200);
+  Serial.begin(38400);
   mcu_sensors_scan();
 }
 
