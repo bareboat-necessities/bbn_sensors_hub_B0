@@ -204,7 +204,7 @@ Pick up resistor with lower % tolerance.
 
 #### NMEA 0183 XDR Sentences for resistance
 
-NMEA 0183 is on USB serial with baud rate of 115200
+NMEA 0183 is on USB serial with baud rate of 38400
 
 Example sentences:
 
@@ -375,10 +375,10 @@ Connected via i2c
 
 ## NMEA XDR Output
 
-on USB-C port with baud rate 115200
+on USB-C port with baud rate 38400
 
 ````
-stty -F /dev/ttyACM1 115200
+stty -F /dev/ttyACM1 38400
 socat stdio /dev/ttyACM1
 ````
 
