@@ -1,4 +1,4 @@
-#include <M5AtomS3.h>
+#include <M5Unified.h>
 #include <Wire.h>
 #include <ReactESP.h>  // https://github.com/mairas/ReactESP
 
@@ -11,14 +11,14 @@ ReactESP app;
 
 void setup() {
   auto cfg = M5.config();
-  AtomS3.begin(cfg);
+  M5.begin(cfg);
   Wire1.begin(G38, G39, 100000UL);
   Serial.begin(38400);
   mcu_sensors_scan();
 }
 
 void loop() {
-  AtomS3.update();
+  M5.update();
   mcu_sensors_update();
   app.tick();
   delay(3);
