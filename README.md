@@ -29,50 +29,6 @@ https://github.com/bareboat-necessities/lysmarine_gen/blob/bookworm/install-scri
 
 ## Supported Sensors
 
-### PIR Motion Sensor (AS312) to NMEA-0183
-
-PIR Motion Sensor (AS312) connected to M5Stack AtomS3-Lite via GPIO digital pin (see gpio_pir_as312.h code
-for pin assignment)
-
-White 'IN^' goes to the digital GPIO pin of m5Atom.
-
-Generates NMEA-0183 XDR sentences (USB Serial) like this:
-
-````
-$BBXDR,S,1,,PIR_MOTION*26
-````
-
-M5Stack PIR Motion Sensor (AS312)
-
-https://shop.m5stack.com/products/pir-module
-
-Can detect a walrus on your boat or someone else :)
-
-### M5Stack Limit Switch to NMEA-0183
-
-M5Stack Limit Switch connected to M5Stack AtomS3-Lite via GPIO digital pin (see gpio_limit_switch.h 
-code for pin assignment)
-
-Generates NMEA-0183 XDR sentences (USB Serial) like this:
-
-````
-$BBXDR,S,0,,LIMIT_CUR*63
-$BBXDR,S,1,,LIMIT_NEW*7A
-$BBXDR,S,0,,LIMIT_NEW*7B
-$BBXDR,S,1,,LIMIT_NEW*7A
-$BBXDR,S,0,,LIMIT_NEW*7B
-$BBXDR,S,0,,LIMIT_CUR*63
-$BBXDR,S,0,,LIMIT_CUR*63
-````
-
-M5Stack Limit Switch
-
-https://shop.m5stack.com/products/limit-switch-unit
-
-Used for detecting a hatch state (open/closed), etc
-
-
-
 ###  Ocean TDS CQRobot (Total Dissolved Solids) Meter Sensor to NMEA-0183
 
 https://www.cqrobot.com/index.php?route=product/product&product_id=1122
@@ -369,7 +325,7 @@ M5Stack DLight illuminance sensor :
 https://shop.m5stack.com/products/dlight-unit-ambient-light-sensor-bh1750fvi-tr
 
 
-### Environmental Air Sensors (Pressure/Temp/Humidity) BMP280, DHT12, QMP6988, SHT30
+### Environmental Air Sensors (Pressure/Temp/Humidity) BMP280, DHT12, QMP6988
 
 Connected via i2c
 
