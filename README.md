@@ -390,9 +390,9 @@ socat stdio /dev/ttyACM1
 # shutdown signalk
 sudo systemctl stop signalk
 
-if [ -f bbn-flash-m5-gpio.sh ]; then rm bbn-flash-m5-gpio.sh; fi
-wget https://raw.githubusercontent.com/bareboat-necessities/my-bareboat/refs/heads/master/m5stack-tools/bbn-flash-m5-gpio.sh
-chmod +x bbn-flash-m5-gpio.sh
-./bbn-flash-m5-gpio.sh -p /dev/ttyACM1
+if [ -f bbn-flash-sensors-hub-B.sh ]; then rm bbn-flash-sensors-hub-B.sh; fi
+wget https://raw.githubusercontent.com/bareboat-necessities/my-bareboat/refs/heads/master/m5stack-tools/bbn-flash-sensors-hub-B.sh
+chmod +x bbn-flash-sensors-hub-B.sh
+./bbn-flash-sensors-hub-B.sh -p /dev/ttyACM1
 ````
 
