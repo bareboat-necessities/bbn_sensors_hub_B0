@@ -33,9 +33,9 @@ jobs:
     - name: Make merged .bin
       run: >
         python3 "$HOME/.arduino15/packages/esp32/tools/esptool_py/4.5.1/esptool.py" 
-        --chip esp32s3 merge_bin -o $HOME/work/bbn_sensors_hub_B0/bbn_sensors_hub_B0/build/bbn_sensors_hub_B0_firmware.bin 
+        --chip esp32 merge_bin -o $HOME/work/bbn_sensors_hub_B0/bbn_sensors_hub_B0/build/bbn_sensors_hub_B0_firmware.bin 
         --flash_mode dio --flash_freq 80m --flash_size 4MB 
-        0x0 "$HOME/work/bbn_sensors_hub_B0/bbn_sensors_hub_B0/build/bbn_sensors_hub_B0.ino.bootloader.bin" 
+        0x1000 "$HOME/work/bbn_sensors_hub_B0/bbn_sensors_hub_B0/build/bbn_sensors_hub_B0.ino.bootloader.bin" 
         0x8000 "$HOME/work/bbn_sensors_hub_B0/bbn_sensors_hub_B0/build/bbn_sensors_hub_B0.ino.partitions.bin" 
         0xe000 "$HOME/.arduino15/packages/esp32/hardware/esp32/2.0.17/tools/partitions/boot_app0.bin" 
         0x10000 "$HOME/work/bbn_sensors_hub_B0/bbn_sensors_hub_B0/build/bbn_sensors_hub_B0.ino.bin"
