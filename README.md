@@ -243,22 +243,6 @@ M5Stack Voltmeter unit:
 https://shop.m5stack.com/products/voltmeter-unit-ads1115
 
 
-### M5Stack DLight Illuminance sensor 
-
-M5Stack DLight illuminance sensor connected to M5Stack Atom-Lite via i2c
-
-Generates NMEA-0183 XDR sentences (USB Serial) like this:
-
-````
-$BBXDR,X,132.0,L,ILLU*68
-$BBXDR,X,128.0,L,ILLU*63
-````
-
-M5Stack DLight illuminance sensor :
-
-https://shop.m5stack.com/products/dlight-unit-ambient-light-sensor-bh1750fvi-tr
-
-
 ## NMEA XDR Output
 
 on USB-C port with baud rate 38400
