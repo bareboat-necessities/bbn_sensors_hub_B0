@@ -5,9 +5,9 @@
 #include "CQRobotTDS.h"
 
 /*
-  TDS sensor is connected to analog pin G7
+  TDS sensor is connected to analog pin G23
 */
-int TDS_pin = G7;
+int TDS_pin = G23;
 CQRobotTDS tds_sensor(TDS_pin, 3.3, 4096.0 /* For ESP32 built-in 12bit ADC */);
 
 void gpio_tds_cqrsentds01_report() {
