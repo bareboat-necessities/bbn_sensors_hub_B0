@@ -6,7 +6,7 @@ No soldering required. Connect sensors to i2c or specified GPIO pins. Load firmw
 
 ## Hardware
 
-- m5stack atom-lite:  https://shop.m5stack.com/products/atom-lite-esp32-dev-kit
+- m5stack atom-lite:  https://shop.m5stack.com/products/atom-lite-esp32-development-kit
 - m5stack ATOMIC PortABC Extension Base: https://shop.m5stack.com/products/atomic-portabc-extension-base
 
 ### Accessories
