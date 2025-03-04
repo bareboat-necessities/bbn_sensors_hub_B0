@@ -8,7 +8,7 @@
  *
  * PIR Motion Sensor (AS312) to NMEA 0183 XDR
  */
-#define PIR_MOTION_PIN G22
+#define PIR_MOTION_PIN G21
 
 void gpio_pir_as312_report() {
   bool sensed = digitalRead(PIR_MOTION_PIN) == 1;
