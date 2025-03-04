@@ -18,7 +18,7 @@ void i2c_bmp280_report() {
 bool i2c_bmp280_try_init() {
   bool i2c_bmp280_found = false;
   for (int i = 0; i < 3; i++) {
-    i2c_bmp280_found = i2c_bmp280_sensor.begin(&Wire1, BMP280_I2C_ADDR, G38, G39, 100000UL);
+    i2c_bmp280_found = i2c_bmp280_sensor.begin(&Wire1, BMP280_I2C_ADDR, G26, G32, 100000UL);
     if (i2c_bmp280_found) {
       break;
     }
