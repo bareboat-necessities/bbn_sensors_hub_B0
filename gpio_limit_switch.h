@@ -3,7 +3,7 @@
 
 #include "NmeaXDR.h"
 
-#define LIMIT_SWITCH_PIN G19
+#define LIMIT_SWITCH_PIN G25
 
 struct LimitSwitch {
   bool reached = false;
