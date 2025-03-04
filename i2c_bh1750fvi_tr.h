@@ -22,7 +22,7 @@ bool i2c_bh1750fvi_tr_try_init() {
     Wire.beginTransmission(BH1750FVI_TR_I2C_ADDR);
     i2c_bh1750fvi_tr_found = !Wire.endTransmission();
     if (i2c_bh1750fvi_tr_found) {
-      i2c_bh1750fvi_tr_sensor.begin(&Wire, G38, G39, 100000UL);
+      i2c_bh1750fvi_tr_sensor.begin(&Wire, G26, G32, 100000UL);
       break;
     }
     delay(10);
