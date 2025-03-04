@@ -198,31 +198,6 @@ $BBXDR,W,0.000,W,WATT_INA219_2*38
 https://www.adafruit.com/product/904
 
 
-###  SGP30 Air Quality and TVOC sensor connected to M5Stack Atom-Lite via i2c
-
-Generates NMEA-0183 XDR sentences (USB Serial) like this:
-
-````
-$BBXDR,X,5,,TVOC*2D
-$BBXDR,X,415,,eCO2*7D
-$BBXDR,X,13507,,rawH2*38
-$BBXDR,X,18875,,rawEthanol*14
-````
-
-Here are some TVOC levels and their associated health effects:
-
-- 0 ppb: Good
-- 220 ppb: Moderate, may cause some symptoms
-- 660 ppb: Unhealthy if sensitive, more likely to cause symptoms
-- 2200 ppb: Unhealthy
-- 3300 ppb: Very unhealthy
-- 4400 ppb: Hazardous
-
-SGP30 Air Quality and TVOC sensor :
-
-[M5Stack SGP30 Air Quality and TVOC sensor](https://shop.m5stack.com/products/tvoc-eco2-gas-unit-sgp30)
-
-
 ### M5Stack 4-20mA current sensor to NMEA-0183 (on secondary i2c bus)
 
 M5Stack Analog to I2C Unit (4-20mA Input) connected to M5Stack Atom-Lite via i2c
