@@ -344,6 +344,7 @@ socat stdio /dev/ttyUSB0
 
 ````
 # shutdown signalk
+sudo systemctl disable signalk
 sudo systemctl stop signalk
 
 if [ -f bbn-flash-sensors-hub-B0.sh ]; then rm bbn-flash-sensors-hub-B0.sh; fi
