@@ -1,12 +1,12 @@
-# bbn-sensors-hub-B
-NMEA 0183 XDR Sensors on esp32 m5stack atomS3-lite via GPIO
+# bbn-sensors-hub-B0
+NMEA 0183 XDR Sensors on esp32 m5stack atom-lite via GPIO
 
-No soldering required. Connect sensors to i2c or specified GPIO pins. Load firmware to atomS3-lite.
+No soldering required. Connect sensors to i2c or specified GPIO pins. Load firmware to atom-lite.
 (On Bareboat Necessites OS it's just copy-paste of a script, see below). Plug and play.
 
 ## Hardware
 
-- m5stack atomS3-lite:  https://shop.m5stack.com/products/atoms3-lite-esp32s3-dev-kit
+- m5stack atom-lite:  https://shop.m5stack.com/products/atom-lite-esp32-dev-kit
 - m5stack ATOMIC PortABC Extension Base: https://shop.m5stack.com/products/atomic-portabc-extension-base
 
 ### Accessories
@@ -33,7 +33,7 @@ https://github.com/bareboat-necessities/lysmarine_gen/blob/bookworm/install-scri
 
 https://www.cqrobot.com/index.php?route=product/product&product_id=1122
 
-M5Stack with AtomS3-Lite and Ocean TDS CQRobot (Total Dissolved Solids) Meter Sensor CQRSENTDS01 to NMEA-0183.
+M5Stack with Atom-Lite and Ocean TDS CQRobot (Total Dissolved Solids) Meter Sensor CQRSENTDS01 to NMEA-0183.
 
 Connected to GPIO pin G7 as analog input.
 
@@ -56,7 +56,7 @@ is not considered safe to drink, and levels above 2,000 ppm may
 require a filtration system.
 
 
-### Resistance sensor with M5Stack AtomS3-Lite
+### Resistance sensor with M5Stack Atom-Lite
 
 In order to measure the resistance you can measure voltage using ADC (analog) input esp32 pin on a voltage divider circuit.
 
@@ -198,7 +198,7 @@ $BBXDR,W,0.000,W,WATT_INA219_2*38
 https://www.adafruit.com/product/904
 
 
-###  SGP30 Air Quality and TVOC sensor connected to M5Stack AtomS3-Lite via i2c
+###  SGP30 Air Quality and TVOC sensor connected to M5Stack Atom-Lite via i2c
 
 Generates NMEA-0183 XDR sentences (USB Serial) like this:
 
@@ -225,7 +225,7 @@ SGP30 Air Quality and TVOC sensor :
 
 ### Time-of-Flight Distance Ranging Sensor Unit (VL53L0X) 
 
-Time-of-Flight Distance Ranging Sensor Unit (VL53L0X) sensor connected to M5Stack AtomS3-Lite via i2c
+Time-of-Flight Distance Ranging Sensor Unit (VL53L0X) sensor connected to M5Stack Atom-Lite via i2c
 
 Generates NMEA-0183 XDR sentences (USB Serial) like this:
 
@@ -243,7 +243,7 @@ https://shop.m5stack.com/products/tof-sensor-unit
 
 Bosch BME680 Sensor to NMEA 0183 via i2c
 
-Connected to M5Stack AtomS3-Lite via i2c
+Connected to M5Stack Atom-Lite via i2c
 
 - Air Pressure
 - Air Temperature
@@ -266,7 +266,7 @@ Bosch BME680 with Temperature Humidity Air Pressure Sensor:
 
 ### M5Stack 4-20mA current sensor to NMEA-0183 (on secondary i2c bus)
 
-M5Stack Analog to I2C Unit (4-20mA Input) connected to M5Stack AtomS3-Lite via i2c
+M5Stack Analog to I2C Unit (4-20mA Input) connected to M5Stack Atom-Lite via i2c
 
 Can be used with many industrial 4-20 mAmps current sensors.
 
@@ -290,10 +290,10 @@ https://www.amazon.com/4-20mA-Liquid-Sensor-Throw-Sensors/dp/B07WDK2PRN
 (Two wires from that sensor connect to IN+ and IN- on M5Stack Unit and on same terminal the current loop need to be powered from some DC power source)
 
 
-### Voltmeter on m5stack AtomS3 with ADS1115 M5Stack Voltmeter (on secondary i2c bus)
+### Voltmeter on m5stack Atom with ADS1115 M5Stack Voltmeter (on secondary i2c bus)
 
 
-M5Stack Voltmeter unit connected to M5Stack AtomS3-Lite via i2c
+M5Stack Voltmeter unit connected to M5Stack Atom-Lite via i2c
 
 Generates NMEA-0183 XDR sentences (USB Serial) like this:
 
@@ -311,7 +311,7 @@ https://shop.m5stack.com/products/voltmeter-unit-ads1115
 
 ### M5Stack DLight Illuminance sensor 
 
-M5Stack DLight illuminance sensor connected to M5Stack AtomS3-Lite via i2c
+M5Stack DLight illuminance sensor connected to M5Stack Atom-Lite via i2c
 
 Generates NMEA-0183 XDR sentences (USB Serial) like this:
 
