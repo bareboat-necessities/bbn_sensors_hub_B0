@@ -19,10 +19,10 @@ void i2c_bh1750fvi_tr_report() {
 bool i2c_bh1750fvi_tr_try_init() {
   bool i2c_bh1750fvi_tr_found = false;
   for (int i = 0; i < 3; i++) {
-    Wire1.beginTransmission(BH1750FVI_TR_I2C_ADDR);
-    i2c_bh1750fvi_tr_found = !Wire1.endTransmission();
+    Wire.beginTransmission(BH1750FVI_TR_I2C_ADDR);
+    i2c_bh1750fvi_tr_found = !Wire.endTransmission();
     if (i2c_bh1750fvi_tr_found) {
-      i2c_bh1750fvi_tr_sensor.begin(&Wire1, G38, G39, 100000UL);
+      i2c_bh1750fvi_tr_sensor.begin(&Wire, G38, G39, 100000UL);
       break;
     }
     delay(10);
