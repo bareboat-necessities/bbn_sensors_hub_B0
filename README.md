@@ -334,8 +334,8 @@ Connected via i2c
 on USB-C port with baud rate 38400
 
 ````
-stty -F /dev/ttyACM1 38400
-socat stdio /dev/ttyACM1
+stty -F /dev/ttyUSB0 38400
+socat stdio /dev/ttyUSB0
 ````
 
 ## Loading Firmware
@@ -349,6 +349,6 @@ sudo systemctl stop signalk
 if [ -f bbn-flash-sensors-hub-B0.sh ]; then rm bbn-flash-sensors-hub-B0.sh; fi
 wget https://raw.githubusercontent.com/bareboat-necessities/my-bareboat/refs/heads/master/m5stack-tools/bbn-flash-sensors-hub-B0.sh
 chmod +x bbn-flash-sensors-hub-B0.sh
-./bbn-flash-sensors-hub-B0.sh -p /dev/ttyACM1
+./bbn-flash-sensors-hub-B0.sh -p /dev/ttyUSB0
 ````
 
