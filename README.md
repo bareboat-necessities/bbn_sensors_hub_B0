@@ -35,7 +35,7 @@ https://www.cqrobot.com/index.php?route=product/product&product_id=1122
 
 M5Stack with Atom-Lite and Ocean TDS CQRobot (Total Dissolved Solids) Meter Sensor CQRSENTDS01 to NMEA-0183.
 
-Connected to GPIO pin G7 as analog input.
+Connected to GPIO pin G23 as analog input.
 
 Generates NMEA-0183 XDR sentences (USB Serial) like this:
 
