@@ -12,7 +12,7 @@ ReactESP app;
 static const char* firmware_tag = "bbn_sensors_hub_B0";
 
 void setup() {
-  M5.begin(true, false, true);  // Init M5Atom.
+  M5.begin();  // Init M5Atom.
   Wire.begin(G26, G32, 100000UL);
   //Wire1.end();
   Serial.begin(38400);
