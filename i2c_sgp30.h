@@ -40,7 +40,7 @@ void i2c_sgp30_report() {
 bool i2c_sgp30_try_init() {
   bool i2c_sgp30_found = false;
   for (int i = 0; i < 3; i++) {
-    i2c_sgp30_found = i2c_sgp30_sensor.begin(&Wire1, true);
+    i2c_sgp30_found = i2c_sgp30_sensor.begin(&Wire, true);
     if (i2c_sgp30_found) {
       break;
     }
