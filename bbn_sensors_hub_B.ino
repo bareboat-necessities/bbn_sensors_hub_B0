@@ -9,7 +9,7 @@ ReactESP app;
 #include "Nmea0183Msg.h"
 #include "mcu_sensors.h"
 
-static const char* firmware_tag = "bbn_sensors_hub_B";
+static const char* firmware_tag = "bbn_sensors_hub_B0";
 
 void setup() {
   auto cfg = M5.config();
