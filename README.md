@@ -223,47 +223,6 @@ SGP30 Air Quality and TVOC sensor :
 [M5Stack SGP30 Air Quality and TVOC sensor](https://shop.m5stack.com/products/tvoc-eco2-gas-unit-sgp30)
 
 
-### Time-of-Flight Distance Ranging Sensor Unit (VL53L0X) 
-
-Time-of-Flight Distance Ranging Sensor Unit (VL53L0X) sensor connected to M5Stack Atom-Lite via i2c
-
-Generates NMEA-0183 XDR sentences (USB Serial) like this:
-
-````
-$BBXDR,D,0.2410,M,RANGE_VL53L0X*66
-$BBXDR,D,0.2430,M,RANGE_VL53L0X*64
-````
-
-Time-of-Flight Distance Ranging Sensor Unit (VL53L0X) sensor :
-
-https://shop.m5stack.com/products/tof-sensor-unit
-
-
-### Bosch BME680 Air Sensor
-
-Bosch BME680 Sensor to NMEA 0183 via i2c
-
-Connected to M5Stack Atom-Lite via i2c
-
-- Air Pressure
-- Air Temperature
-- Humidity
-- Gas Electrical Resistance
-
-Generates NMEA-0183 XDR sentences (USB Serial) like this:
-
-````
-$BBXDR,C,25.97,C,TEMP_BME680*4E
-$BBXDR,P,102061.00,P,PRES_BME680*5B
-$BBXDR,H,48.09,P,HUMI_BME680*4F
-$BBXDR,H,32.17,,GASR_BME680*03
-````
-
-Bosch BME680 with Temperature Humidity Air Pressure Sensor:
-
-[Adafruit BME680](https://www.adafruit.com/product/3660)
-
-
 ### M5Stack 4-20mA current sensor to NMEA-0183 (on secondary i2c bus)
 
 M5Stack Analog to I2C Unit (4-20mA Input) connected to M5Stack Atom-Lite via i2c
