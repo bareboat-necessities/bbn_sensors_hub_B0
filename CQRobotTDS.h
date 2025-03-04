@@ -14,7 +14,7 @@
 
 class CQRobotTDS {
   public:
-    CQRobotTDS(int pin = G8, float aref = 3.3, float adcRange = 4096.0);
+    CQRobotTDS(int pin = G23, float aref = 3.3, float adcRange = 4096.0);
     ~CQRobotTDS();
 
     float update();  // read and calculate
