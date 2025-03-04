@@ -12,10 +12,9 @@ ReactESP app;
 static const char* firmware_tag = "bbn_sensors_hub_B0";
 
 void setup() {
-  auto cfg = M5.config();
-  M5.begin(cfg);
+  M5.begin(true, false, true);  // Init M5Atom.
   Wire.begin(G26, G32, 100000UL);
-  Wire1.end();
+  //Wire1.end();
   Serial.begin(38400);
   gen_nmea0183_msg("$BBTXT,01,01,01,FirmwareTag: %s", firmware_tag);
   mcu_sensors_scan();
